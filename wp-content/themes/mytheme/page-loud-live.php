@@ -17,6 +17,10 @@
 		background-color: cornflowerblue;
 	}
 
+	div::before {
+		content: none;
+	}
+
 </style>
 
 
