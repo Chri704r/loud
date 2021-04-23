@@ -75,7 +75,9 @@
 		</button>
 
 
-		<main></main>
+
+		<section class="container"></section>
+
 
 
 		<template>
@@ -109,7 +111,7 @@
 <!------- SCRIPT BEGYNDER ------->
 <script>
 	let podcasts = [];
-	const liste = document.querySelector("main");
+	const liste = document.querySelector(".container");
 	const skabelon = document.querySelector("template");
 	let filterPodcast = "alle";
 	document.addEventListener("DOMContentLoaded", start);
