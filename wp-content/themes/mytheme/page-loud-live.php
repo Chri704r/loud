@@ -96,7 +96,7 @@
 
 			<div class="beskrivelse">
 				<h3></h3>
-				<p></p>
+				<p id="tekst"></p>
 			</div>
 		</article>
 	</template>
@@ -133,7 +133,7 @@
 				let klon = temp.cloneNode(true).content;
 				klon.querySelector("img").src = podcast.billede.guid;
 				klon.querySelector("h3").textContent = podcast.title.rendered;
-				klon.querySelector("p").textContent = podcast.podcast_beskrivelse;
+				klon.querySelector("#tekst").textContent = podcast.podcast_beskrivelse;
 				container.appendChild(klon);
 			})
 		}
