@@ -2,7 +2,11 @@
 	article {
 		display: grid;
 		grid-template-columns: 12% 12% 76%;
-		margin: 0 0 5px 0;
+		margin: 0 0 15px 0;
+	}
+
+	article div {
+		padding: 8px;
 	}
 
 	.tid {
