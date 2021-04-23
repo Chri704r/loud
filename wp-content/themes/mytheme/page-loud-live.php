@@ -1,7 +1,7 @@
 <style>
 	article {
 		display: grid;
-		grid-template-columns: 12% 12% 76%;
+		grid-template-columns: 12% 23% 65%;
 		margin: 0 0 15px 0;
 	}
 
@@ -10,7 +10,7 @@
 	}
 
 	article div img {
-		max-width: 50px;
+		width: 100%;
 	}
 
 	.tid {
