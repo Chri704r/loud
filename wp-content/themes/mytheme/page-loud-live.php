@@ -17,7 +17,7 @@
 		background-color: cornflowerblue;
 	}
 
-	div:before {
+	div.liste::before {
 		content: none;
 	}
 
