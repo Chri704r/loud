@@ -1,7 +1,8 @@
 <style>
 	.liste {
 		display: grid;
-		grid-auto-columns: 40% 40% 20%;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-gap: 5px;
 	}
 
 	.tid {
