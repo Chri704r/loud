@@ -120,6 +120,7 @@
 
 
 	<!------- SCRIPT BEGYNDER ------->
+	<!------- 7 første podcasts har fået tid og dato ------->
 	<script>
 		let podcasts;
 
