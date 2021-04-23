@@ -6,7 +6,11 @@
 	}
 
 	article div {
-		padding: 8px;
+		padding: 5%;
+	}
+
+	article div img {
+		max-width: 50px;
 	}
 
 	.tid {
