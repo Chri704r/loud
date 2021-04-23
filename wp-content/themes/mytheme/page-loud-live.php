@@ -1,7 +1,7 @@
 <style>
 	.liste {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: 40% 40% 20%;
 		grid-gap: 5px;
 	}
 
@@ -23,6 +23,10 @@
 
 	.ugedage {
 		text-align: center;
+	}
+
+	main {
+		margin: 0 10%;
 	}
 
 </style>
