@@ -5,15 +5,15 @@
 	}
 
 	.tid {
-		background-color: coral;
+		background-color: #F5F5F5;
 	}
 
 	.billede {
-		background-color: aqua;
+		background-color: #F5F5F5;
 	}
 
 	.beskrivelse {
-		background-color: cornflowerblue;
+		background-color: #F5F5F5;
 	}
 
 	div.liste::before {
