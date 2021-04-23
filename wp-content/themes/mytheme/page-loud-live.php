@@ -61,9 +61,15 @@
 		</button>
 
 		<div class="liste">
-			<div class="tid"></div>
-			<div class="billede"></div>
-			<div class="beskrivelse"></div>
+			<div class="tid">
+				<p>hej</p>
+			</div>
+			<div class="billede">
+				<p>hej</p>
+			</div>
+			<div class="beskrivelse">
+				<p>hej</p>
+			</div>
 		</div>
 
 
