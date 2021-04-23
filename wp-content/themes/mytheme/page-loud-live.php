@@ -43,7 +43,7 @@
 	menu::after,
 	nav::after,
 	section::after {
-		content: none;
+		display: none;
 	}
 
 	.ugedage {
