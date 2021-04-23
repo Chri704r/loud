@@ -1,5 +1,5 @@
 <style>
-	.liste {
+	article {
 		display: grid;
 		grid-template-columns: 12% 12% 76%;
 		margin: 0 0 5px 0;
@@ -139,37 +139,5 @@
 		}
 
 		getJson();
-
-
-
-
-
-		//	let podcasts = [];
-		//	const liste = document.querySelector(".container");
-		//	const skabelon = document.querySelector("template");
-		//	let filterPodcast = "alle";
-		//	document.addEventListener("DOMContentLoaded", start);
-		//
-		//	function start() {
-		//		getJson();
-		//	}
-		//
-		//	const url = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?per_page=100";
-		//	async function getJson() {
-		//		let response = awai fetch(url);
-		//		podcasts = await response.json();
-		//		visPodcasts();
-		//	}
-		//
-		//	function visPodcasts() {
-		//		console.log(podcasts);
-		//		podcasts.forEach(podcast => {
-		//			const klon = skabelon.cloneNode(true).content;
-		//			klon.querySelector("img").src = podcast.billede.guid;
-		//			klon.querySelector("h3").textContent = podcast.title.rendered;
-		//			klon.querySelector("p").textContent = podcast.podcast_beskrivelse;
-		//			liste.appendChild(klon);
-		//		})
-		//	}
 
 	</script>
