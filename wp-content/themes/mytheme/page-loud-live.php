@@ -17,7 +17,7 @@
 		background-color: #F5F5F5;
 	}
 
-	div.article::before {
+	article::before {
 		content: none;
 	}
 
