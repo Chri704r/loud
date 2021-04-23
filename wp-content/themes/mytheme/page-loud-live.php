@@ -21,6 +21,10 @@
 		content: none;
 	}
 
+	.ugedage {
+		text-align: center;
+	}
+
 </style>
 
 
@@ -36,102 +40,106 @@
             ?>
 	</div>
 
-	<div class="ugedage">
-		<button id="mandag">
-			<p>Mandag</p>
-		</button>
-		<button id="tirsdag">
-			<p>Tirsdag</p>
-		</button>
-		<button id="onsdag">
-			<p>Onsdag</p>
-		</button>
-		<button id="torsdag">
-			<p>Torsdag</p>
-		</button>
-		<button id="fredag">
-			<p>Fredag</p>
-		</button>
-		<button id="lordag">
-			<p>Lørdag</p>
-		</button>
-		<button id="sondag">
-			<p>Søndag</p>
-		</button>
-	</div>
+	<main>
 
-	<button id="live">
-		<p>AFSPIL LIVE</p>
-	</button>
+		<div class="ugedage">
+			<button id="mandag">
+				<p>Mandag</p>
+			</button>
+			<button id="tirsdag">
+				<p>Tirsdag</p>
+			</button>
+			<button id="onsdag">
+				<p>Onsdag</p>
+			</button>
+			<button id="torsdag">
+				<p>Torsdag</p>
+			</button>
+			<button id="fredag">
+				<p>Fredag</p>
+			</button>
+			<button id="lordag">
+				<p>Lørdag</p>
+			</button>
+			<button id="sondag">
+				<p>Søndag</p>
+			</button>
+		</div>
+
+		<button id="live">
+			<p>AFSPIL LIVE</p>
+		</button>
 
 
-	<div id="main">
-		<div class="liste">
-			<div class="tid">
-				<p>hej</p>
+		<div id="main">
+			<div class="liste">
+				<div class="tid">
+					<p>hej</p>
+				</div>
+				<div class="billede">
+					<p>hej</p>
+				</div>
+				<div class="beskrivelse">
+					<p>hej</p>
+				</div>
 			</div>
-			<div class="billede">
-				<p>hej</p>
+
+
+			<div class="liste">
+				<div class="tid"></div>
+				<div class="billede"></div>
+				<div class="beskrivelse"></div>
 			</div>
-			<div class="beskrivelse">
-				<p>hej</p>
+
+
+			<div class="liste">
+				<div class="tid"></div>
+				<div class="billede"></div>
+				<div class="beskrivelse"></div>
 			</div>
+
+
+			<div class="liste">
+				<div class="tid"></div>
+				<div class="billede"></div>
+				<div class="beskrivelse"></div>
+			</div>
+
+
+			<div class="liste">
+				<div class="tid"></div>
+				<div class="billede"></div>
+				<div class="beskrivelse"></div>
+			</div>
+
+
+			<div class="liste">
+				<div class="tid"></div>
+				<div class="billede"></div>
+				<div class="beskrivelse"></div>
+			</div>
+
+
+			<div class="liste">
+				<div class="tid"></div>
+				<div class="billede"></div>
+				<div class="beskrivelse"></div>
+			</div>
+
+
+			<div class="liste">
+				<div class="tid"></div>
+				<div class="billede"></div>
+				<div class="beskrivelse"></div>
+			</div>
+
+
 		</div>
-
-
-		<div class="liste">
-			<div class="tid"></div>
-			<div class="billede"></div>
-			<div class="beskrivelse"></div>
-		</div>
-
-
-		<div class="liste">
-			<div class="tid"></div>
-			<div class="billede"></div>
-			<div class="beskrivelse"></div>
-		</div>
-
-
-		<div class="liste">
-			<div class="tid"></div>
-			<div class="billede"></div>
-			<div class="beskrivelse"></div>
-		</div>
-
-
-		<div class="liste">
-			<div class="tid"></div>
-			<div class="billede"></div>
-			<div class="beskrivelse"></div>
-		</div>
-
-
-		<div class="liste">
-			<div class="tid"></div>
-			<div class="billede"></div>
-			<div class="beskrivelse"></div>
-		</div>
-
-
-		<div class="liste">
-			<div class="tid"></div>
-			<div class="billede"></div>
-			<div class="beskrivelse"></div>
-		</div>
-
-
-		<div class="liste">
-			<div class="tid"></div>
-			<div class="billede"></div>
-			<div class="beskrivelse"></div>
-		</div>
-
-
-	</div>
-
+	</main>
 
 </div>
+
+
 
 <?php get_footer(); ?>
 
