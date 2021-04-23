@@ -75,82 +75,29 @@
 		</button>
 
 
-		<div id="main">
-			<div class="liste">
+		<main></main>
+
+
+		<template>
+			<article>
 				<div class="tid">
-					<p>00.00</p>
+					<p></p>
 				</div>
+
 				<div class="billede">
-					<img src="img/alis_stemmer.jpg" alt="alis_stemmer">
+					<img src="" alt="">
 				</div>
+
 				<div class="beskrivelse">
-					<h3>Alis stemmer</h3>
-					<p>Corona-restriktioner, nedlukningen af skoler, manglen af samvær med venner og bekendte har fremtvunget identitetskriser, angst, sorg og ængstelighed som aldrig før. Emner er der nok at tage fat om. Og det er endda bare dem, der er opstået i corona-tiden. Dertil kommer alle hverdagsproblemerne; kærestersorger, ensomhed, angst, tankemylder eller bare
-						lysten til at snakke ud. Dem vi alle kender til. Ali Aminali er LOUDs stemme i natten, som lytter, taler og invitere natteravnene ind i studiet.</p>
+					<h3></h3>
+					<p></p>
 				</div>
-			</div>
+			</article>
+		</template>
 
 
-			<div class="liste">
-				<div class="tid">
-					<p>00.00</p>
-				</div>
-				<div class="billede">
-					<img src="img/alis_stemmer.jpg" alt="alis_stemmer">
-				</div>
-				<div class="beskrivelse">
-					<h3>Alis stemmer</h3>
-					<p>Corona-restriktioner, nedlukningen af skoler, manglen af samvær med venner og bekendte har fremtvunget identitetskriser, angst, sorg og ængstelighed som aldrig før. Emner er der nok at tage fat om. Og det er endda bare dem, der er opstået i corona-tiden. Dertil kommer alle hverdagsproblemerne; kærestersorger, ensomhed, angst, tankemylder eller bare
-						lysten til at snakke ud. Dem vi alle kender til. Ali Aminali er LOUDs stemme i natten, som lytter, taler og invitere natteravnene ind i studiet.</p>
-				</div>
-			</div>
-
-			<div class="liste">
-				<div class="tid">
-					<p>00.00</p>
-				</div>
-				<div class="billede">
-					<img src="img/alis_stemmer.jpg" alt="alis_stemmer">
-				</div>
-				<div class="beskrivelse">
-					<h3>Alis stemmer</h3>
-					<p>Corona-restriktioner, nedlukningen af skoler, manglen af samvær med venner og bekendte har fremtvunget identitetskriser, angst, sorg og ængstelighed som aldrig før. Emner er der nok at tage fat om. Og det er endda bare dem, der er opstået i corona-tiden. Dertil kommer alle hverdagsproblemerne; kærestersorger, ensomhed, angst, tankemylder eller bare
-						lysten til at snakke ud. Dem vi alle kender til. Ali Aminali er LOUDs stemme i natten, som lytter, taler og invitere natteravnene ind i studiet.</p>
-				</div>
-			</div>
 
 
-			<div class="liste">
-				<div class="tid">
-					<p>00.00</p>
-				</div>
-				<div class="billede">
-					<img src="img/alis_stemmer.jpg" alt="alis_stemmer">
-				</div>
-				<div class="beskrivelse">
-					<h3>Alis stemmer</h3>
-					<p>Corona-restriktioner, nedlukningen af skoler, manglen af samvær med venner og bekendte har fremtvunget identitetskriser, angst, sorg og ængstelighed som aldrig før. Emner er der nok at tage fat om. Og det er endda bare dem, der er opstået i corona-tiden. Dertil kommer alle hverdagsproblemerne; kærestersorger, ensomhed, angst, tankemylder eller bare
-						lysten til at snakke ud. Dem vi alle kender til. Ali Aminali er LOUDs stemme i natten, som lytter, taler og invitere natteravnene ind i studiet.</p>
-				</div>
-			</div>
-
-
-			<div class="liste">
-				<div class="tid">
-					<p>00.00</p>
-				</div>
-				<div class="billede">
-					<img src="img/alis_stemmer.jpg" alt="alis_stemmer">
-				</div>
-				<div class="beskrivelse">
-					<h3>Alis stemmer</h3>
-					<p>Corona-restriktioner, nedlukningen af skoler, manglen af samvær med venner og bekendte har fremtvunget identitetskriser, angst, sorg og ængstelighed som aldrig før. Emner er der nok at tage fat om. Og det er endda bare dem, der er opstået i corona-tiden. Dertil kommer alle hverdagsproblemerne; kærestersorger, ensomhed, angst, tankemylder eller bare
-						lysten til at snakke ud. Dem vi alle kender til. Ali Aminali er LOUDs stemme i natten, som lytter, taler og invitere natteravnene ind i studiet.</p>
-				</div>
-			</div>
-
-		</div>
-	</main>
 
 </div>
 
@@ -161,6 +108,32 @@
 
 <!------- SCRIPT BEGYNDER ------->
 <script>
+	let podcasts = [];
+	const liste = document.querySelector("main");
+	const skabelon = document.querySelector("template");
+	let filterPodcast = "alle";
+	document.addEventListener("DOMContentLoaded", start);
 
+	function start() {
+		getJson();
+	}
+
+	const url = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?per_page=100";
+	async function getJson() {
+		let response = awai fetch(url);
+		podcasts = await response.json();
+		visPodcasts();
+	}
+
+	function visPodcasts() {
+		console.log(podcasts);
+		podcasts.forEach(podcast => {
+			const klon = skabelon.cloneNode(true).content;
+			klon.querySelector("img").src = podcast.billede.guid;
+			klon.querySelector("h3").textContent = podcast.title.rendered;
+			klon.querySelector("p").textContent = podcast.podcast_beskrivelse;
+			liste.appendChild(klon);
+		})
+	}
 
 </script>
