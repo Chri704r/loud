@@ -42,8 +42,10 @@
 	hgroup::after,
 	menu::after,
 	nav::after,
-	section::after {
+	section::after,
+	section.container::before {
 		display: none;
+		content: none;
 	}
 
 	.ugedage {
