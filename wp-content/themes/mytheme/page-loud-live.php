@@ -91,53 +91,62 @@
 
 
 			<div class="liste">
-				<div class="tid"></div>
-				<div class="billede"></div>
-				<div class="beskrivelse"></div>
+				<div class="tid">
+					<p>00.00</p>
+				</div>
+				<div class="billede">
+					<img src="img/alis_stemmer.jpg" alt="alis_stemmer">
+				</div>
+				<div class="beskrivelse">
+					<h3>Alis stemmer</h3>
+					<p>Corona-restriktioner, nedlukningen af skoler, manglen af samvær med venner og bekendte har fremtvunget identitetskriser, angst, sorg og ængstelighed som aldrig før. Emner er der nok at tage fat om. Og det er endda bare dem, der er opstået i corona-tiden. Dertil kommer alle hverdagsproblemerne; kærestersorger, ensomhed, angst, tankemylder eller bare
+						lysten til at snakke ud. Dem vi alle kender til. Ali Aminali er LOUDs stemme i natten, som lytter, taler og invitere natteravnene ind i studiet.</p>
+				</div>
+			</div>
+
+			<div class="liste">
+				<div class="tid">
+					<p>00.00</p>
+				</div>
+				<div class="billede">
+					<img src="img/alis_stemmer.jpg" alt="alis_stemmer">
+				</div>
+				<div class="beskrivelse">
+					<h3>Alis stemmer</h3>
+					<p>Corona-restriktioner, nedlukningen af skoler, manglen af samvær med venner og bekendte har fremtvunget identitetskriser, angst, sorg og ængstelighed som aldrig før. Emner er der nok at tage fat om. Og det er endda bare dem, der er opstået i corona-tiden. Dertil kommer alle hverdagsproblemerne; kærestersorger, ensomhed, angst, tankemylder eller bare
+						lysten til at snakke ud. Dem vi alle kender til. Ali Aminali er LOUDs stemme i natten, som lytter, taler og invitere natteravnene ind i studiet.</p>
+				</div>
 			</div>
 
 
 			<div class="liste">
-				<div class="tid"></div>
-				<div class="billede"></div>
-				<div class="beskrivelse"></div>
+				<div class="tid">
+					<p>00.00</p>
+				</div>
+				<div class="billede">
+					<img src="img/alis_stemmer.jpg" alt="alis_stemmer">
+				</div>
+				<div class="beskrivelse">
+					<h3>Alis stemmer</h3>
+					<p>Corona-restriktioner, nedlukningen af skoler, manglen af samvær med venner og bekendte har fremtvunget identitetskriser, angst, sorg og ængstelighed som aldrig før. Emner er der nok at tage fat om. Og det er endda bare dem, der er opstået i corona-tiden. Dertil kommer alle hverdagsproblemerne; kærestersorger, ensomhed, angst, tankemylder eller bare
+						lysten til at snakke ud. Dem vi alle kender til. Ali Aminali er LOUDs stemme i natten, som lytter, taler og invitere natteravnene ind i studiet.</p>
+				</div>
 			</div>
 
 
 			<div class="liste">
-				<div class="tid"></div>
-				<div class="billede"></div>
-				<div class="beskrivelse"></div>
+				<div class="tid">
+					<p>00.00</p>
+				</div>
+				<div class="billede">
+					<img src="img/alis_stemmer.jpg" alt="alis_stemmer">
+				</div>
+				<div class="beskrivelse">
+					<h3>Alis stemmer</h3>
+					<p>Corona-restriktioner, nedlukningen af skoler, manglen af samvær med venner og bekendte har fremtvunget identitetskriser, angst, sorg og ængstelighed som aldrig før. Emner er der nok at tage fat om. Og det er endda bare dem, der er opstået i corona-tiden. Dertil kommer alle hverdagsproblemerne; kærestersorger, ensomhed, angst, tankemylder eller bare
+						lysten til at snakke ud. Dem vi alle kender til. Ali Aminali er LOUDs stemme i natten, som lytter, taler og invitere natteravnene ind i studiet.</p>
+				</div>
 			</div>
-
-
-			<div class="liste">
-				<div class="tid"></div>
-				<div class="billede"></div>
-				<div class="beskrivelse"></div>
-			</div>
-
-
-			<div class="liste">
-				<div class="tid"></div>
-				<div class="billede"></div>
-				<div class="beskrivelse"></div>
-			</div>
-
-
-			<div class="liste">
-				<div class="tid"></div>
-				<div class="billede"></div>
-				<div class="beskrivelse"></div>
-			</div>
-
-
-			<div class="liste">
-				<div class="tid"></div>
-				<div class="billede"></div>
-				<div class="beskrivelse"></div>
-			</div>
-
 
 		</div>
 	</main>
