@@ -2,6 +2,7 @@
 	.liste {
 		display: grid;
 		grid-template-columns: 12% 12% 76%;
+		margin: 0 0 5px 0;
 	}
 
 	.tid {
