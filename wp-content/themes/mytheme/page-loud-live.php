@@ -17,8 +17,9 @@
 		background-color: #F5F5F5;
 	}
 
-	article::before {
+	article:before {
 		content: none;
+		background-color: aqua;
 	}
 
 	section.container::before {
