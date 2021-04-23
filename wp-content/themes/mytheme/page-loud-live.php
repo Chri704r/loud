@@ -18,8 +18,8 @@
 	}
 
 	article::before {
-		display: none;
-		content: none;
+		display: none !important;
+		content: none !important;
 	}
 
 	.ugedage {
