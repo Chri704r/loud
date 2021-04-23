@@ -17,33 +17,7 @@
 		background-color: #F5F5F5;
 	}
 
-	div::before,
-	ul::before,
-	article::before,
-	aside::before,
-	details::before,
-	figcaption::before,
-	figure::before,
-	footer::before,
-	header::before,
-	hgroup::before,
-	menu::before,
-	nav::before,
-	section::before,
-	div::after,
-	ul::after,
-	article::after,
-	aside::after,
-	details::after,
-	figcaption::after,
-	figure::after,
-	footer::after,
-	header::after,
-	hgroup::after,
-	menu::after,
-	nav::after,
-	section::after,
-	section.container::before {
+	article::before {
 		display: none;
 		content: none;
 	}
