@@ -139,7 +139,7 @@
 			podcasts.forEach(podcast => {
 				let klon = temp.cloneNode(true).content;
 				klon.querySelector("img").src = podcast.billede.guid;
-				klon.querySelector("h3").textContent = podcast.title.rendered;
+				klon.querySelector("h3").innerHTML = podcast.title.rendered;
 				klon.querySelector("#tekst").textContent = podcast.podcast_beskrivelse;
 				container.appendChild(klon);
 			})
