@@ -123,7 +123,22 @@
 			const data = await fetch(dbUrl);
 			podcasts = await data.json();
 			console.log(podcasts);
+			visPodcasts();
 		}
+
+		function visPodcasts() {
+			let temp = document.querySelector("template");
+			let container = document.querySelector(".container")
+			podcasts.forEach(podcast => {
+				let klon = temp.cloneNode(true).content;
+				klon.querySelector("img").src = podcast.billede.guid;
+				klon.querySelector("h3").textContent = podcast.title.rendered;
+				klon.querySelector("p").textContent = podcast.podcast_beskrivelse;
+				container.appendChild(klon);
+			})
+		}
+
+		getJson();
 
 
 
