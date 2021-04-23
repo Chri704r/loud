@@ -21,6 +21,10 @@
 		content: none;
 	}
 
+	section.container::before {
+		content: none;
+	}
+
 	.ugedage {
 		text-align: center;
 	}
