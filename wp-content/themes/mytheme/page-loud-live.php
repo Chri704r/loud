@@ -17,9 +17,11 @@
 		background-color: #F5F5F5;
 	}
 
+	/*
 	div.liste::before {
 		content: none;
 	}
+*/
 
 	.ugedage {
 		text-align: center;
