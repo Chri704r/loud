@@ -4,6 +4,18 @@
 		grid-auto-columns: 40% 40% 20%;
 	}
 
+	.tid {
+		background-color: coral;
+	}
+
+	.billede {
+		background-color: aqua;
+	}
+
+	.beskrivelse {
+		background-color: cornflowerblue;
+	}
+
 </style>
 
 
