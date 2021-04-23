@@ -17,7 +17,7 @@
 		background-color: cornflowerblue;
 	}
 
-	div::before {
+	div:before {
 		content: none;
 	}
 
