@@ -56,11 +56,12 @@
 		</button>
 	</div>
 
-	<div id="main">
-		<button id="live">
-			<p>AFSPIL LIVE</p>
-		</button>
+	<button id="live">
+		<p>AFSPIL LIVE</p>
+	</button>
 
+
+	<div id="main">
 		<div class="liste">
 			<div class="tid">
 				<p>hej</p>
