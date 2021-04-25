@@ -46,6 +46,8 @@
             .main {
                 max-width: 1200px;
                 margin: 0 auto;
+                padding-left: 10px;
+                padding-right: 10px;
             }
 
             .alle {
@@ -123,8 +125,8 @@
             }
 
             [data-queen="4"] {
-                padding-top: 40%;
-                font-size: 30px !important;
+                padding-top: 37%;
+                font-size: 40px !important;
             }
 
             @media only screen and (max-width: 700px) {
@@ -132,6 +134,14 @@
                     display: flex;
                     flex-direction: row;
                     overflow-x: scroll;
+                }
+                .alle_podcasts:after {
+                    display: flex;
+                    font-size: 3em;
+                    padding-top: 20%;
+                    line-height: initial;
+                    padding-left: 100px;
+                    padding-right: 100px;
                 }
                 .billede {
                     width: 70%;
@@ -199,8 +209,8 @@
             };
 
             function filtrering() {
-
                 console.log("click");
+                location.href = categories.link;
                 //                            filterQueen = this.dataset.queen;
                 //location.href = `archive.php?id=${}`;
 
