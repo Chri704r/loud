@@ -2,7 +2,7 @@
 
     <div id='page-content' class="page-content">
         <div class="main">
-
+            <h1>Podcasts</h1>
             <h2>Alle podcasts</h2>
             <section class="alle_podcasts">
             </section>
@@ -26,6 +26,11 @@
         <style>
             img {
                 width: 100%;
+            }
+
+            h1 {
+                color: #e4254a;
+                margin-top: 30px;
             }
 
             h2 {
@@ -81,7 +86,6 @@
             .kategori {
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
-                grid-auto-rows: 1fr;
                 grid-gap: 20px;
             }
 
@@ -92,7 +96,6 @@
             .laver {
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
-                grid-auto-rows: 1fr;
                 grid-gap: 20px;
             }
 
@@ -103,7 +106,6 @@
             .page-content button {
                 width: 100%;
                 height: 100%;
-                /*                height: 200px;*/
                 border: none;
                 border-radius: 30px;
                 background-color: #e5e5e5;
@@ -121,12 +123,22 @@
                 margin-top: 15%;
                 margin-left: auto;
                 margin-right: auto;
-                padding-bottom: 45px;
+                padding-bottom: 50px;
             }
 
             [data-queen="4"] {
                 padding-top: 37%;
                 font-size: 40px !important;
+            }
+
+            @media only screen and (max-width: 800px) {
+                button img {
+                    padding-bottom: 30px;
+                }
+                [data-queen="4"] {
+                    padding-top: 37%;
+                    font-size: 30px !important;
+                }
             }
 
             @media only screen and (max-width: 700px) {
@@ -145,6 +157,35 @@
                 }
                 .billede {
                     width: 70%;
+                }
+                .kategori {
+                    display: grid;
+                    grid-template-columns: repeat(6, 25vw);
+                    grid-template-rows: 1fr 1fr;
+                    grid-gap: 7px;
+                    overflow-x: scroll;
+                }
+                .kategori [data-queen="4"] {
+                    grid-column: 1/3;
+                    grid-row: 1/3;
+                    font-size: 40px !important;
+                }
+                button img {
+                    padding-bottom: 6vw;
+                }
+                .page-content button {
+                    font-size: 2.5vw;
+                }
+                .laver {
+                    display: grid;
+                    grid-template-columns: repeat(5, 25vw);
+                    grid-template-rows: 1fr 1fr;
+                    grid-gap: 7px;
+                    overflow-x: scroll;
+                }
+                .laver [data-queen="19"] {
+                    grid-column: 1/3;
+                    grid-row: 1/3;
                 }
             }
 
@@ -183,7 +224,8 @@
             function opretKnapper() {
 
                 categories.forEach(cat => {
-                    document.querySelector(".kategori").innerHTML += `<button class="filter" data-queen="${cat.id}">${cat.description}${cat.name}</button>`
+                    document.querySelector(".kategori").innerHTML += `<button class="filter" id="cat-${cat.id}" data-queen="${cat.id}">${cat.description}${cat.name}</button>`;
+
                 })
 
                 addEventListernesToButtons();
@@ -211,19 +253,9 @@
             function filtrering() {
                 console.log("click");
                 location.href = categories.link;
-                //                            filterQueen = this.dataset.queen;
-                //location.href = `archive.php?id=${}`;
 
             }
-            //
-            //            function filtrering() {
-            //                klon.querySelector("article").addEventListener("click", () => {
-            //                    location.href = cat.link;
-            //                })
-            //            }
 
-
-            //            location.href = `detail.html?id=${hvem._id}`;
 
 
             //---------INDSÆTTER PODCASTS I KLON-------
