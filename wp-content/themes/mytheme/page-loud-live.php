@@ -122,37 +122,142 @@
 	<!-- Tab content -->
 	<div id="Man" class="tabcontent">
 		<h3>Mandag</h3>
-		<p>I dag er det mandag</p>
+		<template>
+			<article>
+				<div class="tid">
+					<p></p>
+				</div>
+
+				<div class="billede">
+					<img src="" alt="">
+				</div>
+
+				<div class="beskrivelse">
+					<h3></h3>
+					<p id="tekst"></p>
+				</div>
+			</article>
+		</template>
 	</div>
 
 	<div id="Tir" class="tabcontent">
 		<h3>Tirsdag</h3>
-		<p>I dag er det Tirsdag</p>
+		<template>
+			<article>
+				<div class="tid">
+					<p></p>
+				</div>
+
+				<div class="billede">
+					<img src="" alt="">
+				</div>
+
+				<div class="beskrivelse">
+					<h3></h3>
+					<p id="tekst"></p>
+				</div>
+			</article>
+		</template>
 	</div>
 
 	<div id="Ons" class="tabcontent">
 		<h3>Onsdag</h3>
-		<p>I dag er det Onsdag</p>
+		<template>
+			<article>
+				<div class="tid">
+					<p></p>
+				</div>
+
+				<div class="billede">
+					<img src="" alt="">
+				</div>
+
+				<div class="beskrivelse">
+					<h3></h3>
+					<p id="tekst"></p>
+				</div>
+			</article>
+		</template>
 	</div>
 
 	<div id="Tor" class="tabcontent">
 		<h3>Torsdag</h3>
-		<p>I dag er det Torsdag</p>
+		<template>
+			<article>
+				<div class="tid">
+					<p></p>
+				</div>
+
+				<div class="billede">
+					<img src="" alt="">
+				</div>
+
+				<div class="beskrivelse">
+					<h3></h3>
+					<p id="tekst"></p>
+				</div>
+			</article>
+		</template>
 	</div>
 
 	<div id="Fre" class="tabcontent">
 		<h3>Fredag</h3>
-		<p>I dag er det Fredag</p>
+		<template>
+			<article>
+				<div class="tid">
+					<p></p>
+				</div>
+
+				<div class="billede">
+					<img src="" alt="">
+				</div>
+
+				<div class="beskrivelse">
+					<h3></h3>
+					<p id="tekst"></p>
+				</div>
+			</article>
+		</template>
 	</div>
 
 	<div id="Lor" class="tabcontent">
 		<h3>Lørdag</h3>
-		<p>I dag er det Lørdag</p>
+		<template>
+			<article>
+				<div class="tid">
+					<p></p>
+				</div>
+
+				<div class="billede">
+					<img src="" alt="">
+				</div>
+
+				<div class="beskrivelse">
+					<h3></h3>
+					<p id="tekst"></p>
+				</div>
+			</article>
+		</template>
 	</div>
 
 	<div id="Son" class="tabcontent">
 		<h3>Søndag</h3>
-		<p>I dag er det Søndag</p>
+		<template>
+			<article>
+				<div class="tid">
+					<p></p>
+				</div>
+
+				<div class="billede">
+					<img src="" alt="">
+				</div>
+
+				<div class="beskrivelse">
+					<h3></h3>
+					<p id="tekst"></p>
+				</div>
+			</article>
+		</template>
 	</div>
 
 
@@ -168,6 +273,7 @@
 
 
 
+	<!--
 	<template>
 		<article>
 			<div class="tid">
@@ -184,6 +290,7 @@
 			</div>
 		</article>
 	</template>
+-->
 
 
 
