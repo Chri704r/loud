@@ -36,17 +36,25 @@
 
 	main {
 		margin: 0 10%;
+	}
 
-		@media only screen and (max-width: 800px) {
-			main {
-				margin: 0 4%;
-			}
+	#live {
+		background-color: #E4254A;
+		color: #fff;
+		text-align: center;
+		border-bottom-left-radius: 1%;
+	}
 
-			.beskrivelse {
-				text-align: left;
-			}
+	@media only screen and (max-width: 800px) {
+		main {
+			margin: 0 4%;
+		}
+
+		.beskrivelse {
+			text-align: left;
 		}
 	}
+
 
 	@media only screen and (max-width: 700px) {
 
@@ -124,7 +132,6 @@
 
 
 	<!------- SCRIPT BEGYNDER ------->
-	<!------- 7 første podcasts har fået tid og dato ------->
 	<script>
 		let podcasts;
 		let categories;
