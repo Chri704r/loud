@@ -166,28 +166,27 @@
 	<!------- 7 første podcasts har fået tid og dato ------->
 	<script>
 		let podcasts;
-		let ugedage;
+		let categories;
 		let filterDag;
 
 		const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?per_page=100";
-		const dagUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/ugedag";
+		const catUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/ugedag";
 
 
 		async function getJson() {
 			const data = await fetch(dbUrl);
-			const dagdata = await fetch(dagUrl);
+			const catdata = await fetch(catUrl);
 			podcasts = await data.json();
-			ugedage = await dagdata.json();
-			console.log(ugedage);
+			categories = await catdata.json();
+			console.log(categories);
 			visPodcasts();
 			opretKnapper();
 		}
 
 		function opretKnapper() {
-			ugedage.forEach(dag => {
-				document.querySelector("#filtrering").innerHTML += `<button class="filter" data-dag="${dag.id}">${dag.name}</button>`
+			categories.forEach(cat => {
+				document.querySelector("#filtrering").innerHTML += `<button class="filter" data-dag="${cat.id}">${cat.name}</button>`
 			})
-
 			addEventListenersToButtons();
 		}
 
@@ -197,8 +196,8 @@
 		}
 
 		function filtrering() {
-			filterDag = this.dataset.dag;
-			console.log(filterRet);
+			filterDag = this.dataset.cat;
+			console.log(filterDag);
 		}
 
 		function visPodcasts() {
