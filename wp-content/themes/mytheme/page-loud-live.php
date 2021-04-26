@@ -54,6 +54,18 @@
 		font-family: 'Lato', sans-serif;
 	}
 
+	.filter {
+		background-color: #F1F1F1;
+		color: #000;
+		border-radius: 8px;
+		border: none;
+		padding: 10px 15px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-family: 'Lato', sans-serif;
+	}
+
 	@media only screen and (max-width: 800px) {
 
 		body {
