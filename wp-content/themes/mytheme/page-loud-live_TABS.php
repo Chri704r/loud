@@ -118,7 +118,52 @@
 
 <main>
 
+	<!-- Tab links -->
+	<div class="tab">
+		<button class="tablinks" onclick="openDag(event, 'Man')">Mandag</button>
+		<button class="tablinks" onclick="openDag(event, 'Tir')">Tirsdag</button>
+		<button class="tablinks" onclick="openDag(event, 'Ons')">Onsdag</button>
+		<button class="tablinks" onclick="openDag(event, 'Tor')">Torsdag</button>
+		<button class="tablinks" onclick="openDag(event, 'Fre')">Fredag</button>
+		<button class="tablinks" onclick="openDag(event, 'Lor')">Lørdag</button>
+		<button class="tablinks" onclick="openDag(event, 'Son')">Søndag</button>
+	</div>
 
+	<!-- Tab content -->
+	<div id="Man" class="tabcontent">
+		<h3>Mandag</h3>
+		<section class="container"></section>
+	</div>
+
+	<div id="Tir" class="tabcontent">
+		<h3>Tirsdag</h3>
+		<section class="container"></section>
+	</div>
+
+	<div id="Ons" class="tabcontent">
+		<h3>Onsdag</h3>
+		<section class="container"></section>
+	</div>
+
+	<div id="Tor" class="tabcontent">
+		<h3>Torsdag</h3>
+		<section class="container"></section>
+	</div>
+
+	<div id="Fre" class="tabcontent">
+		<h3>Fredag</h3>
+		<section class="container"></section>
+	</div>
+
+	<div id="Lor" class="tabcontent">
+		<h3>Lørdag</h3>
+		<section class="container"></section>
+	</div>
+
+	<div id="Son" class="tabcontent">
+		<h3>Søndag</h3>
+		<section class="container"></section>
+	</div>
 
 
 
@@ -166,18 +211,14 @@
 	<!------- 7 første podcasts har fået tid og dato ------->
 	<script>
 		let podcasts;
-		let ugedage;
 
 		const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?per_page=100";
-		const dagUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/ugedag";
 
 
 		async function getJson() {
 			const data = await fetch(dbUrl);
-			const dagdata = await fetch(dagUrl);
 			podcasts = await data.json();
-			ugedage = await dagdata.json();
-			console.log(ugedage);
+			console.log(podcasts);
 			visPodcasts();
 		}
 
@@ -194,5 +235,36 @@
 		}
 
 		getJson();
+
+
+
+
+
+
+		/*
+
+		TABS KODE
+
+				function openDag(evt, dagNavn) {
+					// Declare all variables
+					var i, tabcontent, tablinks;
+
+					// Get all elements with class="tabcontent" and hide them
+					tabcontent = document.getElementsByClassName("tabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+
+					// Get all elements with class="tablinks" and remove the class "active"
+					tablinks = document.getElementsByClassName("tablinks");
+					for (i = 0; i < tablinks.length; i++) {
+						tablinks[i].className = tablinks[i].className.replace(" active", "");
+					}
+
+					// Show the current tab, and add an "active" class to the button that opened the tab
+					document.getElementById(dagNavn).style.display = "block";
+					evt.currentTarget.className += " active";
+				}
+		*/
 
 	</script>
