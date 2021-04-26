@@ -228,6 +228,7 @@
 		function visPodcasts() {
 			let temp = document.querySelector("template");
 			let container = document.querySelector(".container")
+			container.innerHTML = "";
 			podcasts.forEach(podcast => {
 				if (podcast.categories.includes(parseInt(filterDag))) {
 					let klon = temp.cloneNode(true).content;
