@@ -187,6 +187,7 @@
 			categories.forEach(cat => {
 				document.querySelector("#filtrering").innerHTML += `<button class="filter" data-dag="${cat.id}">${cat.name}</button>`
 			})
+
 			addEventListenersToButtons();
 		}
 
@@ -196,7 +197,7 @@
 			})
 
 		function filtrering() {
-			filterDag = this.dataset.cat;
+			filterDag = this.dataset.dag;
 			console.log(filterDag);
 		}
 
