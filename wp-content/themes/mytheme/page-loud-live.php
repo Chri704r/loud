@@ -1,5 +1,8 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
 
 
 
@@ -64,6 +67,7 @@
 		text-decoration: none;
 		display: inline-block;
 		font-family: 'Lato', sans-serif;
+		margin-right: 5%;
 	}
 
 	@media only screen and (max-width: 800px) {
