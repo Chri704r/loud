@@ -1,4 +1,8 @@
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+
+
 	article {
 		display: grid;
 		grid-template-columns: 12% 23% 65%;
@@ -42,7 +46,13 @@
 		background-color: #E4254A;
 		color: #fff;
 		text-align: center;
-		border-bottom-left-radius: 1%;
+		border-bottom-left-radius: 12px;
+		border: none;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-family: 'Lato', sans-serif;
 	}
 
 	@media only screen and (max-width: 800px) {
