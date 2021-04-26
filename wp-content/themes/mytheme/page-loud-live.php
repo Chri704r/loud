@@ -155,7 +155,8 @@
 		function addEventListenersToButtons() {
 			document.querySelectorAll("#filtrering button").forEach(elm =>
 				elm.addEventListener("click", filtrering);
-			})
+			)
+		}
 
 		function filtrering() {
 			filterDag = this.dataset.dag;
