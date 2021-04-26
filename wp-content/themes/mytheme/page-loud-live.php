@@ -40,9 +40,10 @@
 
 	@media only screen and (max-width: 700px) {
 
-		div {
-			background-color: aqua;
+		main {
+			margin: 0 4%;
 		}
+	}
 	}
 
 </style>
