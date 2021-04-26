@@ -231,6 +231,7 @@
 			container.innerHTML = "";
 			podcasts.forEach(podcast => {
 				if (podcast.categories.includes(parseInt(filterDag))) {
+					console.log("inden");
 					let klon = temp.cloneNode(true).content;
 					klon.querySelector("img").src = podcast.billede.guid;
 					klon.querySelector("h3").innerHTML = podcast.title.rendered;
