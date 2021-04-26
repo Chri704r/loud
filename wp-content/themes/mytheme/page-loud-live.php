@@ -110,53 +110,52 @@
 
 	<!-- Tab links -->
 	<div class="tab">
-		<button class="tablinks" onclick="openCity(event, 'London')">London</button>
-		<button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-		<button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+		<button class="tablinks" onclick="openDag(event, 'Man')">Mandag</button>
+		<button class="tablinks" onclick="openDag(event, 'Tir')">Tirsdag</button>
+		<button class="tablinks" onclick="openDag(event, 'Ons')">Onsdag</button>
+		<button class="tablinks" onclick="openDag(event, 'Tor')">Torsdag</button>
+		<button class="tablinks" onclick="openDag(event, 'Fre')">Fredag</button>
+		<button class="tablinks" onclick="openDag(event, 'Lor')">Lørdag</button>
+		<button class="tablinks" onclick="openDag(event, 'Son')">Søndag</button>
 	</div>
 
 	<!-- Tab content -->
-	<div id="London" class="tabcontent">
-		<h3>London</h3>
-		<p>London is the capital city of England.</p>
+	<div id="Man" class="tabcontent">
+		<h3>Mandag</h3>
+		<p>I dag er det mandag</p>
 	</div>
 
-	<div id="Paris" class="tabcontent">
-		<h3>Paris</h3>
-		<p>Paris is the capital of France.</p>
+	<div id="Tir" class="tabcontent">
+		<h3>Tirsdag</h3>
+		<p>I dag er det Tirsdag</p>
 	</div>
 
-	<div id="Tokyo" class="tabcontent">
-		<h3>Tokyo</h3>
-		<p>Tokyo is the capital of Japan.</p>
+	<div id="Ons" class="tabcontent">
+		<h3>Onsdag</h3>
+		<p>I dag er det Onsdag</p>
+	</div>
+
+	<div id="Tor" class="tabcontent">
+		<h3>Torsdag</h3>
+		<p>I dag er det Torsdag</p>
+	</div>
+
+	<div id="Fre" class="tabcontent">
+		<h3>Fredag</h3>
+		<p>I dag er det Fredag</p>
+	</div>
+
+	<div id="Lor" class="tabcontent">
+		<h3>Lørdag</h3>
+		<p>I dag er det Lørdag</p>
+	</div>
+
+	<div id="Son" class="tabcontent">
+		<h3>Søndag</h3>
+		<p>I dag er det Søndag</p>
 	</div>
 
 
-
-
-	<!--
-		<button class="tablinks" onclick="openDag(event, 'London')">
-			<p>Mandag</p>
-		</button>
-		<button id="tirsdag">
-			<p>Tirsdag</p>
-		</button>
-		<button id="onsdag">
-			<p>Onsdag</p>
-		</button>
-		<button id="torsdag">
-			<p>Torsdag</p>
-		</button>
-		<button id="fredag">
-			<p>Fredag</p>
-		</button>
-		<button id="lordag">
-			<p>Lørdag</p>
-		</button>
-		<button id="sondag">
-			<p>Søndag</p>
-		</button>
--->
 
 
 	<button id="live">
@@ -232,7 +231,7 @@
 
 
 
-		function openCity(evt, cityName) {
+		function openDag(evt, dagNavn) {
 			// Declare all variables
 			var i, tabcontent, tablinks;
 
@@ -249,7 +248,7 @@
 			}
 
 			// Show the current tab, and add an "active" class to the button that opened the tab
-			document.getElementById(cityName).style.display = "block";
+			document.getElementById(dagNavn).style.display = "block";
 			evt.currentTarget.className += " active";
 		}
 
