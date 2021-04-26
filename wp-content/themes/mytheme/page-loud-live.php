@@ -36,6 +36,16 @@
 
 	main {
 		margin: 0 10%;
+
+		@media only screen and (max-width: 800px) {
+			main {
+				margin: 0 4%;
+			}
+
+			.beskrivelse {
+				text-align: left;
+			}
+		}
 	}
 
 	@media only screen and (max-width: 700px) {
@@ -52,7 +62,7 @@
 
 
 
-	/* LÅNT KODE */
+	/* STYLING TIL TABS */
 	/* Style the tab */
 	.tab {
 		overflow: hidden;
