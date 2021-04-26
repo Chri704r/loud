@@ -46,7 +46,7 @@
 		background-color: #E4254A;
 		color: #fff;
 		text-align: center;
-		border-bottom-left-radius: 12px;
+		border-radius: 12px;
 		border: none;
 		padding: 15px 32px;
 		text-align: center;
