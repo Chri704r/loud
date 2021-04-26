@@ -168,7 +168,7 @@
 			let temp = document.querySelector("template");
 			let container = document.querySelector(".container")
 			podcasts.forEach(podcast => {
-				if (cat.id.includes(parseInt(filterDag))) {
+				if (cat.categories.includes(parseInt(filterDag))) {
 					let klon = temp.cloneNode(true).content;
 					klon.querySelector("img").src = podcast.billede.guid;
 					klon.querySelector("h3").innerHTML = podcast.title.rendered;
