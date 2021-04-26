@@ -70,6 +70,10 @@
 		margin: 27px 1% 20px 0;
 	}
 
+	.filter:active {
+		background-color: #BC;
+	}
+
 	@media only screen and (max-width: 800px) {
 
 		body {
@@ -85,7 +89,6 @@
 		}
 
 
-		#live {}
 	}
 
 
