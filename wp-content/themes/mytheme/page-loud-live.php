@@ -71,7 +71,7 @@
 	}
 
 	.filter:active {
-		background-color: #BC;
+		background-color: #BCBCBC;
 	}
 
 	@media only screen and (max-width: 800px) {
