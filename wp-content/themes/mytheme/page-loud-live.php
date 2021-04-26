@@ -70,7 +70,27 @@
 <main>
 
 	<div class="ugedage">
-		<button id="mandag">
+
+		<div id="London" class="tabcontent">
+			<h3>London</h3>
+			<p>London is the capital city of England.</p>
+		</div>
+
+		<div id="Paris" class="tabcontent">
+			<h3>Paris</h3>
+			<p>Paris is the capital of France.</p>
+		</div>
+
+		<div id="Tokyo" class="tabcontent">
+			<h3>Tokyo</h3>
+			<p>Tokyo is the capital of Japan.</p>
+		</div>
+
+
+
+
+		<!--
+		<button class="tablinks" onclick="openDag(event, 'London')">
 			<p>Mandag</p>
 		</button>
 		<button id="tirsdag">
@@ -91,6 +111,7 @@
 		<button id="sondag">
 			<p>Søndag</p>
 		</button>
+-->
 	</div>
 
 	<button id="live">
@@ -159,5 +180,19 @@
 		}
 
 		getJson();
+
+		function openCity(evt, cityName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
 
 	</script>
