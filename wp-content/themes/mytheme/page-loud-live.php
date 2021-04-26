@@ -39,7 +39,10 @@
 	}
 
 	@media only screen and (max-width: 700px) {
-		background-color: aqua;
+
+		body {
+			background-color: aqua;
+		}
 	}
 
 </style>
