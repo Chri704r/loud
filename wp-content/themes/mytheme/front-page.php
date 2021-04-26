@@ -56,6 +56,11 @@
                 height: 100%;
             }
 
+            .color-overlay:after,
+            .color-overlay:before {
+                width: 0;
+            }
+
         </style>
 
 
