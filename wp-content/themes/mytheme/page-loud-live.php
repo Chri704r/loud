@@ -108,7 +108,7 @@
 
 <main>
 
-	<div class="ugedage">
+	<div class="tab">
 
 		<div id="London" class="tabcontent">
 			<h3>London</h3>
