@@ -4,7 +4,10 @@
 
 
 
+	h1 {
+		color: #E4254A;
 
+	}
 
 	article {
 		display: grid;
@@ -50,11 +53,13 @@
 		color: #fff;
 		border-radius: 12px;
 		border: none;
-		padding: 15px 32px;
+		padding: 15px 38px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
 		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+		font-size: 1.3rem;
 	}
 
 	.filter {
@@ -62,12 +67,14 @@
 		color: #000;
 		border-radius: 8px;
 		border: none;
-		padding: 10px 23px;
+		padding: 10px 22px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
 		font-family: 'Lato', sans-serif;
 		margin: 27px 1% 20px 0;
+		font-weight: 700;
+		font-size: 1rem;
 	}
 
 	.filter:active {
