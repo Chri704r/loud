@@ -167,6 +167,7 @@
 	<script>
 		let podcasts;
 		let ugedage;
+		let filterDag;
 
 		const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?per_page=100";
 		const dagUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/ugedag";
@@ -186,6 +187,18 @@
 			ugedage.forEach(dag => {
 				document.querySelector("#filtrering").innerHTML += `<button class="filter" data-dag="${dag.id}">${dag.name}</button>`
 			})
+
+			addEventListenersToButtons();
+		}
+
+		function addEventListenersToButtons() {
+			document.querySelectorAll("#filtrering button").forEach(elm =>
+				elm.addEventListener("click", filtrering);)
+		};
+
+		function filtrering() {
+			filterDag = this.dataset.dag;
+			console.log(filterRet);
 		}
 
 		function visPodcasts() {
