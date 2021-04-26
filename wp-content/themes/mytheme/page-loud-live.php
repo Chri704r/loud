@@ -1,4 +1,8 @@
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+
+
 	article {
 		display: grid;
 		grid-template-columns: 12% 23% 65%;
@@ -36,17 +40,31 @@
 
 	main {
 		margin: 0 10%;
+	}
 
-		@media only screen and (max-width: 800px) {
-			main {
-				margin: 0 4%;
-			}
+	#live {
+		background-color: #E4254A;
+		color: #fff;
+		text-align: center;
+		border-bottom-left-radius: 12px;
+		border: none;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-family: 'Lato', sans-serif;
+	}
 
-			.beskrivelse {
-				text-align: left;
-			}
+	@media only screen and (max-width: 800px) {
+		main {
+			margin: 0 4%;
+		}
+
+		.beskrivelse {
+			text-align: left;
 		}
 	}
+
 
 	@media only screen and (max-width: 700px) {
 
@@ -124,7 +142,6 @@
 
 
 	<!------- SCRIPT BEGYNDER ------->
-	<!------- 7 første podcasts har fået tid og dato ------->
 	<script>
 		let podcasts;
 		let categories;
@@ -154,25 +171,29 @@
 
 		function addEventListenersToButtons() {
 			document.querySelectorAll("#filtrering button").forEach(elm =>
-				elm.addEventListener("click", filtrering);
-			)
+				elm.addEventListener("click", filtrering));
 		}
 
 		function filtrering() {
 			filterDag = this.dataset.dag;
 			console.log(filterDag);
+
+			visPodcasts();
 		}
 
 		function visPodcasts() {
 			let temp = document.querySelector("template");
 			let container = document.querySelector(".container")
 			podcasts.forEach(podcast => {
-				let klon = temp.cloneNode(true).content;
-				klon.querySelector("img").src = podcast.billede.guid;
-				klon.querySelector("h3").innerHTML = podcast.title.rendered;
-				klon.querySelector("#tekst").textContent = podcast.kortbeskrivelse;
-				container.appendChild(klon);
+				if (podcast.categories.includes(parseInt(filterDag))) {
+					let klon = temp.cloneNode(true).content;
+					klon.querySelector("img").src = podcast.billede.guid;
+					klon.querySelector("h3").innerHTML = podcast.title.rendered;
+					klon.querySelector("#tekst").textContent = podcast.kortbeskrivelse;
+					container.appendChild(klon);
+				}
 			})
+
 		}
 
 		getJson();
