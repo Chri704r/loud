@@ -122,142 +122,37 @@
 	<!-- Tab content -->
 	<div id="Man" class="tabcontent">
 		<h3>Mandag</h3>
-		<template>
-			<article>
-				<div class="tid">
-					<p></p>
-				</div>
-
-				<div class="billede">
-					<img src="" alt="">
-				</div>
-
-				<div class="beskrivelse">
-					<h3></h3>
-					<p id="tekst"></p>
-				</div>
-			</article>
-		</template>
+		<p>I dag er det mandag</p>
 	</div>
 
 	<div id="Tir" class="tabcontent">
 		<h3>Tirsdag</h3>
-		<template>
-			<article>
-				<div class="tid">
-					<p></p>
-				</div>
-
-				<div class="billede">
-					<img src="" alt="">
-				</div>
-
-				<div class="beskrivelse">
-					<h3></h3>
-					<p id="tekst"></p>
-				</div>
-			</article>
-		</template>
+		<p>I dag er det Tirsdag</p>
 	</div>
 
 	<div id="Ons" class="tabcontent">
 		<h3>Onsdag</h3>
-		<template>
-			<article>
-				<div class="tid">
-					<p></p>
-				</div>
-
-				<div class="billede">
-					<img src="" alt="">
-				</div>
-
-				<div class="beskrivelse">
-					<h3></h3>
-					<p id="tekst"></p>
-				</div>
-			</article>
-		</template>
+		<p>I dag er det Onsdag</p>
 	</div>
 
 	<div id="Tor" class="tabcontent">
 		<h3>Torsdag</h3>
-		<template>
-			<article>
-				<div class="tid">
-					<p></p>
-				</div>
-
-				<div class="billede">
-					<img src="" alt="">
-				</div>
-
-				<div class="beskrivelse">
-					<h3></h3>
-					<p id="tekst"></p>
-				</div>
-			</article>
-		</template>
+		<p>I dag er det Torsdag</p>
 	</div>
 
 	<div id="Fre" class="tabcontent">
 		<h3>Fredag</h3>
-		<template>
-			<article>
-				<div class="tid">
-					<p></p>
-				</div>
-
-				<div class="billede">
-					<img src="" alt="">
-				</div>
-
-				<div class="beskrivelse">
-					<h3></h3>
-					<p id="tekst"></p>
-				</div>
-			</article>
-		</template>
+		<p>I dag er det Fredag</p>
 	</div>
 
 	<div id="Lor" class="tabcontent">
 		<h3>Lørdag</h3>
-		<template>
-			<article>
-				<div class="tid">
-					<p></p>
-				</div>
-
-				<div class="billede">
-					<img src="" alt="">
-				</div>
-
-				<div class="beskrivelse">
-					<h3></h3>
-					<p id="tekst"></p>
-				</div>
-			</article>
-		</template>
+		<p>I dag er det Lørdag</p>
 	</div>
 
 	<div id="Son" class="tabcontent">
 		<h3>Søndag</h3>
-		<template>
-			<article>
-				<div class="tid">
-					<p></p>
-				</div>
-
-				<div class="billede">
-					<img src="" alt="">
-				</div>
-
-				<div class="beskrivelse">
-					<h3></h3>
-					<p id="tekst"></p>
-				</div>
-			</article>
-		</template>
+		<p>I dag er det Søndag</p>
 	</div>
 
 
@@ -273,7 +168,6 @@
 
 
 
-	<!--
 	<template>
 		<article>
 			<div class="tid">
@@ -290,7 +184,7 @@
 			</div>
 		</article>
 	</template>
--->
+
 
 
 
@@ -325,7 +219,7 @@
 				let klon = temp.cloneNode(true).content;
 				klon.querySelector("img").src = podcast.billede.guid;
 				klon.querySelector("h3").innerHTML = podcast.title.rendered;
-				klon.querySelector("#tekst").textContent = podcast.podcast_beskrivelse;
+				klon.querySelector("#tekst").textContent = podcast.kortbeskrivelse;
 				container.appendChild(klon);
 			})
 		}
