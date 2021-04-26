@@ -55,6 +55,11 @@
 	}
 
 	@media only screen and (max-width: 800px) {
+
+		body {
+			text-align: left;
+		}
+
 		main {
 			margin: 0 4%;
 		}
@@ -64,14 +69,16 @@
 		}
 
 
-		#live {
-			text-align: left;
-		}
+		#live {}
 	}
 
 
 	@media only screen and (max-width: 700px) {
 
+		body {
+			text-align: left;
+		}
+
 		main {
 			margin: 0 4%;
 		}
@@ -80,9 +87,6 @@
 			text-align: left;
 		}
 
-		#live {
-			text-align: left;
-		}
 	}
 	}
 
