@@ -57,7 +57,7 @@
 	@media only screen and (max-width: 800px) {
 
 		body {
-			text-align: left;
+			text-align: left !important;
 		}
 
 		main {
@@ -76,7 +76,7 @@
 	@media only screen and (max-width: 700px) {
 
 		body {
-			text-align: left;
+			text-align: left !important;
 		}
 
 		main {
