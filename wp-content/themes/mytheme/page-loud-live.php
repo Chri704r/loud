@@ -74,6 +74,10 @@
 		background-color: #BCBCBC;
 	}
 
+	.filter:hover {
+		background-color: #BCBCBC;
+	}
+
 	@media only screen and (max-width: 800px) {
 
 		body {
