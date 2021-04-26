@@ -38,6 +38,10 @@
 		margin: 0 10%;
 	}
 
+	@media only screen and (max-width: 700px) {
+		background-color: aqua;
+	}
+
 </style>
 
 
