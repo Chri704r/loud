@@ -62,6 +62,11 @@
 		.beskrivelse {
 			text-align: left;
 		}
+
+
+		#live {
+			text-align: left;
+		}
 	}
 
 
@@ -72,6 +77,10 @@
 		}
 
 		.beskrivelse {
+			text-align: left;
+		}
+
+		#live {
 			text-align: left;
 		}
 	}
