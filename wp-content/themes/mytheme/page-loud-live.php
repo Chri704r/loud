@@ -118,7 +118,7 @@
 
 <main>
 
-
+	<nav id="filtrering"></nav>
 
 
 
@@ -179,6 +179,13 @@
 			ugedage = await dagdata.json();
 			console.log(ugedage);
 			visPodcasts();
+			opretKnapper();
+		}
+
+		function opretKnapper() {
+			ugedage.forEach(dag => {
+				document.querySelector("#filtrering").innerHTML += `<button class="filter" data-dag="${dag.id}">${dag.name}</button>`
+			})
 		}
 
 		function visPodcasts() {
