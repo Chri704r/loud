@@ -40,7 +40,7 @@
 
 	@media only screen and (max-width: 700px) {
 
-		body {
+		div {
 			background-color: aqua;
 		}
 	}
