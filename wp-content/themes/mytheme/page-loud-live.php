@@ -43,6 +43,10 @@
 		main {
 			margin: 0 4%;
 		}
+
+		.beskrivelse {
+			text-align: left;
+		}
 	}
 	}
 
