@@ -62,12 +62,12 @@
 		color: #000;
 		border-radius: 8px;
 		border: none;
-		padding: 10px 15px;
+		padding: 10px 23px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
 		font-family: 'Lato', sans-serif;
-		margin-right: 5%;
+		margin: 27px 1% 20px 0;
 	}
 
 	@media only screen and (max-width: 800px) {
@@ -124,6 +124,8 @@
 -->
 
 <main>
+
+	<h1>LOUD Live</h1>
 
 	<nav id="filtrering"></nav>
 
