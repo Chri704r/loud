@@ -160,18 +160,23 @@
 		function filtrering() {
 			filterDag = this.dataset.dag;
 			console.log(filterDag);
+
+			visDage();
 		}
 
 		function visPodcasts() {
 			let temp = document.querySelector("template");
 			let container = document.querySelector(".container")
 			podcasts.forEach(podcast => {
-				let klon = temp.cloneNode(true).content;
-				klon.querySelector("img").src = podcast.billede.guid;
-				klon.querySelector("h3").innerHTML = podcast.title.rendered;
-				klon.querySelector("#tekst").textContent = podcast.kortbeskrivelse;
-				container.appendChild(klon);
+				if (dag.categories.includes(parseInt(filterDag))) {
+					let klon = temp.cloneNode(true).content;
+					klon.querySelector("img").src = podcast.billede.guid;
+					klon.querySelector("h3").innerHTML = podcast.title.rendered;
+					klon.querySelector("#tekst").textContent = podcast.kortbeskrivelse;
+					container.appendChild(klon);
+				}
 			})
+
 		}
 
 		getJson();
