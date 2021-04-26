@@ -132,37 +132,37 @@
 	<!-- Tab content -->
 	<div id="Man" class="tabcontent">
 		<h3>Mandag</h3>
-		<p>I dag er det mandag</p>
+		<section class="container"></section>
 	</div>
 
 	<div id="Tir" class="tabcontent">
 		<h3>Tirsdag</h3>
-		<p>I dag er det Tirsdag</p>
+		<section class="container"></section>
 	</div>
 
 	<div id="Ons" class="tabcontent">
 		<h3>Onsdag</h3>
-		<p>I dag er det Onsdag</p>
+		<section class="container"></section>
 	</div>
 
 	<div id="Tor" class="tabcontent">
 		<h3>Torsdag</h3>
-		<p>I dag er det Torsdag</p>
+		<section class="container"></section>
 	</div>
 
 	<div id="Fre" class="tabcontent">
 		<h3>Fredag</h3>
-		<p>I dag er det Fredag</p>
+		<section class="container"></section>
 	</div>
 
 	<div id="Lor" class="tabcontent">
 		<h3>Lørdag</h3>
-		<p>I dag er det Lørdag</p>
+		<section class="container"></section>
 	</div>
 
 	<div id="Son" class="tabcontent">
 		<h3>Søndag</h3>
-		<p>I dag er det Søndag</p>
+		<section class="container"></section>
 	</div>
 
 
@@ -174,7 +174,7 @@
 
 
 
-	<section class="container"></section>
+
 
 
 
