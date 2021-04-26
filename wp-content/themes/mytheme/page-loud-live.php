@@ -161,7 +161,7 @@
 			filterDag = this.dataset.dag;
 			console.log(filterDag);
 
-			visDage();
+			visPodcasts();
 		}
 
 		function visPodcasts() {
