@@ -106,6 +106,14 @@
 		background-color: #F5F5F5;
 	}
 
+	.tid {
+		color: #E4254A;
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+		font-size: 1.3rem;
+		padding-top: 90%;
+	}
+
 
 
 	@media only screen and (max-width: 800px) {
@@ -232,6 +240,7 @@
 			opretKnapper();
 		}
 
+
 		function opretKnapper() {
 			console.log("opretKnapper");
 			categories.forEach(cat => {
@@ -247,6 +256,7 @@
 				elm.addEventListener("click", filtrering));
 		}
 
+
 		function filtrering() {
 			console.log("filtrering")
 			filterDag = this.dataset.dag;
@@ -254,6 +264,7 @@
 
 			visPodcasts();
 		}
+
 
 		function visPodcasts() {
 
@@ -269,6 +280,7 @@
 			podcasts.forEach(podcast => {
 				if (podcast.sendeplan == filterDag) {
 					let klon = temp.cloneNode(true).content;
+					klon.querySelector(".tid").innerHTML = podcast.tidspunkt;
 					klon.querySelector("article").setAttribute("id", `pid_${podcast.id}`);
 					klon.querySelector("img").src = podcast.billede.guid;
 					klon.querySelector("h3").innerHTML = podcast.title.rendered;
@@ -278,10 +290,17 @@
 					klon.querySelector(".mere_button").addEventListener("click", () => visMere(podcast));
 
 					container.appendChild(klon);
+
 				}
 			})
 
 		}
+
+
+
+
+
+
 
 		//-------VIS MERE KNAP-------
 		function visMere(podcast) {
