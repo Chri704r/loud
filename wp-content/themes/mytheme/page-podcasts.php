@@ -115,15 +115,15 @@
 
             button.filter {
                 display: grid;
-                grid-template-rows: 80%;
+                grid-template-rows: 75%;
             }
 
             button img {
-                width: 60%;
-                margin-top: 15%;
+                width: 40%;
+                margin-top: 25%;
                 margin-left: auto;
                 margin-right: auto;
-                padding-bottom: 50px;
+                padding-bottom: 55px;
             }
 
             [data-queen="4"] {
@@ -133,7 +133,7 @@
 
             @media only screen and (max-width: 800px) {
                 button img {
-                    padding-bottom: 30px;
+                    padding-bottom: 40px;
                 }
                 [data-queen="4"] {
                     padding-top: 37%;
@@ -152,8 +152,8 @@
                     font-size: 3em;
                     padding-top: 20%;
                     line-height: initial;
-                    padding-left: 100px;
-                    padding-right: 100px;
+                    padding-left: 120px;
+                    padding-right: 120px;
                 }
                 .billede {
                     width: 70%;
@@ -171,7 +171,10 @@
                     font-size: 40px !important;
                 }
                 button img {
-                    padding-bottom: 6vw;
+                    padding-bottom: 9vw;
+                }
+                button.filter {
+                    grid-template-rows: 65%;
                 }
                 .page-content button {
                     font-size: 2.5vw;
@@ -224,7 +227,7 @@
             function opretKnapper() {
 
                 categories.forEach(cat => {
-                    document.querySelector(".kategori").innerHTML += `<button class="filter" id="cat-${cat.id}" data-queen="${cat.id}">${cat.description}${cat.name}</button>`;
+                    document.querySelector(".kategori").innerHTML += `<button class="filter" data-link=${cat.link} id="cat-${cat.id}" data-queen="${cat.id}">${cat.description}${cat.name}</button>`;
 
                 })
 
@@ -235,7 +238,8 @@
             function opretKnapper2() {
 
                 categories2.forEach(cat => {
-                    document.querySelector(".laver").innerHTML += `<button class="filter" data-queen="${cat.id}">${cat.description}${cat.name}</button>`
+                    document.querySelector(".laver").innerHTML += `<button class="filter" data-link=${cat.link} data-queen="${cat.id}">${cat.description}${cat.name}</button>`
+
                 })
 
                 addEventListernesToButtons();
@@ -252,7 +256,7 @@
 
             function filtrering() {
                 console.log("click");
-                location.href = categories.link;
+                location.href = this.dataset.link;
 
             }
 
@@ -274,8 +278,8 @@
 
             }
 
-            function visDetaljer(hvem) {
-                location.href = hvem.link;
+            function visDetaljer(hvilken) {
+                location.href = hvilken.link;
 
             }
 
