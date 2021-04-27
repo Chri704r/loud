@@ -19,3 +19,15 @@ h1 {
 	font-family: 'Lato', sans-serif;
 	margin-top: 30px;
 }
+
+.mere_button button {
+	border: none;
+	box-shadow: none;
+	text-transform: uppercase;
+	color: #6f6f6f;
+}
+
+.mere_button button:hover {
+	color: #e4254a;
+	cursor: pointer;
+}

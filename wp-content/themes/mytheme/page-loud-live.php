@@ -60,6 +60,15 @@
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
 		font-size: 1.3rem;
+		margin: 0 0 13px 0;
+	}
+
+	#live:active {
+		background-color: #bb1636;
+	}
+
+	#live:hover {
+		background-color: #bb1636;
 	}
 
 	.filter {
@@ -84,6 +93,20 @@
 	.filter:hover {
 		background-color: #BCBCBC;
 	}
+
+	.mere_button {
+		padding: 0;
+	}
+
+	.mere_button button {
+		background-color: #F5F5F5;
+	}
+
+	.mere_button button:hover {
+		background-color: #F5F5F5;
+	}
+
+
 
 	@media only screen and (max-width: 800px) {
 
@@ -169,7 +192,10 @@
 			<div class="beskrivelse">
 				<h3></h3>
 				<p id="tekst"></p>
+				<div class="mere_button"></div>
 			</div>
+
+
 		</article>
 	</template>
 
@@ -196,6 +222,7 @@
 
 
 		async function getJson() {
+			console.log("getJson");
 			const data = await fetch(dbUrl);
 			const catdata = await fetch(catUrl);
 			podcasts = await data.json();
@@ -206,6 +233,7 @@
 		}
 
 		function opretKnapper() {
+			console.log("opretKnapper");
 			categories.forEach(cat => {
 				document.querySelector("#filtrering").innerHTML += `<button class="filter" data-dag="${cat.id}">${cat.name}</button>`
 			})
@@ -214,13 +242,15 @@
 		}
 
 		function addEventListenersToButtons() {
+			console.log("addEventListenersToButtons")
 			document.querySelectorAll("#filtrering button").forEach(elm =>
 				elm.addEventListener("click", filtrering));
 		}
 
 		function filtrering() {
+			console.log("filtrering")
 			filterDag = this.dataset.dag;
-			console.log(filterDag);
+			console.log("filterDag", filterDag);
 
 			visPodcasts();
 		}
@@ -228,23 +258,54 @@
 		function visPodcasts() {
 
 
-			console.log("DEN LOADER IKKE IF-SÆTNING IND JO");
+			console.log("podcast");
 
 
 
 			let temp = document.querySelector("template");
 			let container = document.querySelector(".container")
 			container.innerHTML = "";
+			console.log("podcasts: ", podcasts);
 			podcasts.forEach(podcast => {
-				if (podcast.categories.includes(parseInt(filterDag))) {
+				if (podcast.sendeplan == filterDag) {
 					let klon = temp.cloneNode(true).content;
+					klon.querySelector("article").setAttribute("id", `pid_${podcast.id}`);
 					klon.querySelector("img").src = podcast.billede.guid;
 					klon.querySelector("h3").innerHTML = podcast.title.rendered;
-					klon.querySelector("#tekst").textContent = podcast.kortbeskrivelse;
+
+					klon.querySelector("#tekst").textContent = podcast.podcast_beskrivelse.substring(0, 180) + "...";
+					klon.querySelector(".mere_button").innerHTML += `<button>Læs mere</button>`
+					klon.querySelector(".mere_button").addEventListener("click", () => visMere(podcast));
+
 					container.appendChild(klon);
 				}
 			})
 
+		}
+
+		//-------VIS MERE KNAP-------
+		function visMere(podcast) {
+			console.log("visMere");
+
+			document.querySelector(".mere_button").removeEventListener("click", () => visMere(podcast));
+
+			document.querySelector(`#pid_${podcast.id}`).querySelector("#tekst").textContent = podcast.podcast_beskrivelse;
+
+			document.querySelector(`#pid_${podcast.id}`).querySelector(".mere_button").innerHTML = `<button>Læs mindre</button>`
+
+
+			document.querySelector(`#pid_${podcast.id}`).querySelector(".mere_button").addEventListener("click", () => visMindre(podcast));
+
+		}
+
+
+		//-------VIS MINDRE KNAP--------
+		function visMindre(podcast) {
+			document.querySelector(`#pid_${podcast.id}`).querySelector("#tekst").textContent = podcast.podcast_beskrivelse.substring(0, 180) + "...";
+
+			document.querySelector(`#pid_${podcast.id}`).querySelector(".mere_button").innerHTML = `<button>Læs mere</button>`
+
+			document.querySelector(`#pid_${podcast.id}`).querySelector(".mere_button").addEventListener("click", () => visMere(podcast));
 		}
 
 		getJson();
