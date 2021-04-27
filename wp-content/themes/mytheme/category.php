@@ -73,16 +73,13 @@
         let podcasts;
         let categories;
         let beskrivelser;
-        //let aktuel_cat = ?php echo get_cat_ID($category) ?>;
+        let aktuel_cat = <?php echo get_the_ID() ?>;
 
-        // console.log(get_cat_ID($category));
+        console.log("id: ", get_the_ID);
 
-
-
-        const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?categories=11";
+        const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?categories=" + aktuel_cat;
 
         //get_category( get_query_var( 'cat' )
-
 
 
         async function getJson() {
@@ -123,10 +120,13 @@
 
         }
 
+        //-----GÅ TIL SINGLE PODCAST SIDE----
         function visSingle(hvilken) {
             location.href = hvilken.link;
         }
 
+
+        //-------VIS MERE KNAP-------
         function visMere(podcast) {
             console.log("click");
 
@@ -141,6 +141,7 @@
 
         }
 
+        //-------VIS MINDRE KNAP--------
         function visMindre(podcast) {
             document.querySelector(`#pid_${podcast.id}`).querySelector(".podcast_beskrivelse").textContent = podcast.podcast_beskrivelse.substring(0, 90) + "...";
 
