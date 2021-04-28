@@ -193,7 +193,26 @@
 
 		#dropdown {
 			display: none;
+			background-color: #F1F1F1;
+			color: #000;
+			border-radius: 8px;
+			border: none;
+			padding: 10px 22px;
+			text-align: center;
+			text-decoration: none;
+			font-family: 'Lato', sans-serif;
+			margin: 27px 1% 20px 0;
+			font-weight: 700;
+			font-size: 1rem;
+			cursor: pointer
 		}
+
+		#dropdown:hover {
+			background-color: #BCBCBC;
+			cursor: pointer
+		}
+
+
 
 
 
@@ -245,6 +264,12 @@
 			#dropdown {
 				display: block;
 
+			}
+
+			#filtrering {
+				background-color: #E4254A;
+				padding: 0 10%;
+				border-radius: 11px;
 			}
 
 		}
