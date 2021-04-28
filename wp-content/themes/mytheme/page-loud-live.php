@@ -1,160 +1,3 @@
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-
-
-	h1 {
-		color: #E4254A;
-
-	}
-
-	article {
-		display: grid;
-		grid-template-columns: 12% 23% 65%;
-		margin: 0 0 15px 0;
-	}
-
-	article div {
-		padding: 5%;
-	}
-
-	article div img {
-		width: 100%;
-	}
-
-	.tid {
-		background-color: #F5F5F5;
-	}
-
-	.billede {
-		background-color: #F5F5F5;
-	}
-
-	.beskrivelse {
-		background-color: #F5F5F5;
-	}
-
-	article::before {
-		display: none !important;
-		content: none !important;
-	}
-
-	.ugedage {
-		text-align: center;
-	}
-
-	main {
-		margin: 0 10%;
-	}
-
-	#live {
-		background-color: #E4254A;
-		color: #fff;
-		border-radius: 12px;
-		border: none;
-		padding: 15px 38px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		font-family: 'Lato', sans-serif;
-		font-weight: 700;
-		font-size: 1.3rem;
-		margin: 0 0 13px 0;
-	}
-
-	#live:active {
-		background-color: #bb1636;
-	}
-
-	#live:hover {
-		background-color: #bb1636;
-	}
-
-	.filter {
-		background-color: #F1F1F1;
-		color: #000;
-		border-radius: 8px;
-		border: none;
-		padding: 10px 22px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		font-family: 'Lato', sans-serif;
-		margin: 27px 1% 20px 0;
-		font-weight: 700;
-		font-size: 1rem;
-	}
-
-	.filter:active {
-		background-color: #BCBCBC;
-	}
-
-	.filter:hover {
-		background-color: #BCBCBC;
-	}
-
-	.mere_button {
-		padding: 0;
-	}
-
-	.mere_button button {
-		background-color: #F5F5F5;
-	}
-
-	.mere_button button:hover {
-		background-color: #F5F5F5;
-	}
-
-	.tid {
-		color: #E4254A;
-		font-family: 'Lato', sans-serif;
-		font-weight: 700;
-		font-size: 1.3rem;
-		padding-top: 90%;
-	}
-
-
-
-	@media only screen and (max-width: 800px) {
-
-		body {
-			text-align: left !important;
-		}
-
-		main {
-			margin: 0 4%;
-		}
-
-		.beskrivelse {
-			text-align: left;
-		}
-
-
-	}
-
-
-	@media only screen and (max-width: 700px) {
-
-		body {
-			text-align: left !important;
-		}
-
-		main {
-			margin: 0 4%;
-		}
-
-		.beskrivelse {
-			text-align: left;
-		}
-
-	}
-	}
-
-</style>
-
-
-
 <?php mesmerize_get_header(); ?>
 
 <!--
@@ -219,6 +62,168 @@
 	<?php get_footer(); ?>
 
 
+
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+
+		h1 {
+			color: #E4254A;
+
+		}
+
+		article {
+			display: grid;
+			grid-template-columns: 12% 23% 65%;
+			margin: 0 0 15px 0;
+		}
+
+		article div {
+			padding: 5%;
+		}
+
+		article div img {
+			width: 100%;
+		}
+
+		.tid {
+			background-color: #F5F5F5;
+		}
+
+		.billede {
+			background-color: #F5F5F5;
+		}
+
+		.beskrivelse {
+			background-color: #F5F5F5;
+		}
+
+		article::before {
+			display: none !important;
+			content: none !important;
+		}
+
+		.ugedage {
+			text-align: center;
+		}
+
+		main {
+			margin: 0 10%;
+		}
+
+		#live {
+			background-color: #E4254A;
+			color: #fff;
+			border-radius: 12px;
+			border: none;
+			padding: 15px 38px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-family: 'Lato', sans-serif;
+			font-weight: 700;
+			font-size: 1.3rem;
+			margin: 0 0 13px 0;
+			cursor: pointer
+		}
+
+		#live:active {
+			background-color: #bb1636;
+		}
+
+		#live:hover {
+			background-color: #bb1636;
+		}
+
+		.filter {
+			background-color: #F1F1F1;
+			color: #000;
+			border-radius: 8px;
+			border: none;
+			padding: 10px 22px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-family: 'Lato', sans-serif;
+			margin: 27px 1% 20px 0;
+			font-weight: 700;
+			font-size: 1rem;
+			cursor: pointer
+		}
+
+		.filter:active {
+			background-color: aqua;
+		}
+
+		.filter:hover {
+			background-color: #BCBCBC;
+		}
+
+		.mere_button {
+			padding: 0;
+		}
+
+		.mere_button button {
+			background-color: #F5F5F5;
+		}
+
+		.mere_button button:hover {
+			background-color: #F5F5F5;
+		}
+
+		.tid {
+			color: #E4254A;
+			font-family: 'Lato', sans-serif;
+			font-weight: 700;
+			font-size: 1.3rem;
+			padding-top: 90%;
+		}
+
+
+
+		@media only screen and (max-width: 800px) {
+
+			body {
+				text-align: left !important;
+			}
+
+			main {
+				margin: 0 4%;
+			}
+
+			.beskrivelse {
+				text-align: left;
+			}
+
+
+		}
+
+
+		@media only screen and (max-width: 700px) {
+
+			body {
+				text-align: left !important;
+			}
+
+			main {
+				margin: 0 4%;
+			}
+
+			.beskrivelse {
+				text-align: left;
+			}
+
+		}
+		}
+
+	</style>
+
+
+
+
 	<!------- SCRIPT BEGYNDER ------->
 	<script>
 		let podcasts;
@@ -236,6 +241,19 @@
 			podcasts = await data.json();
 			categories = await catdata.json();
 			console.log(categories);
+
+			let d = new Date().getDay();
+			if (d == 0) {
+				filterDag = 34;
+			} else if (d == 1) {
+				filterDag = 40
+			} else if (d == 2) {
+				filterDag = 39;
+			} else if (d == 3) {
+				filterDag = 38;
+			}
+			console.log("filterDag", filterDag);
+
 			visPodcasts();
 			opretKnapper();
 		}
