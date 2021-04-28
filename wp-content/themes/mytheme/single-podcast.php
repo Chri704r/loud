@@ -36,6 +36,7 @@
 
 	<template>
 		<div class="episode_container">
+			<img src="<?php echo get_stylesheet_directory_uri()?>/img/playknap.png" alt="" class="afspil_episode">
 			<img src="" alt="" class="podcast_billede">
 			<div class="episode_fakta">
 				<h3 class="episode_navn"></h3>
@@ -95,6 +96,13 @@
 		padding-right: 15px;
 	}
 
+	.afspil_episode {
+		position: absolute;
+		left: 14vw;
+		margin-top: 12vw;
+
+	}
+
 	.afspilknap {
 		margin-bottom: 15px;
 		background-color: #E4254A;
@@ -113,17 +121,13 @@
 	.ikoner {
 		display: flex;
 		justify-content: space-between;
+		margin-right: 6vw;
 	}
 
 	.lyt_ikon {
 		width: 3rem;
 		padding: 5px;
 	}
-
-
-
-	/*TABLET*/
-	@media only screen and (max-width: 800px) {}
 
 
 	/*Desktop*/
@@ -156,6 +160,13 @@
 
 		.podcast_billede {
 			max-width: 50%;
+		}
+
+		.afspil_episode {
+			position: absolute;
+			left: 16vw;
+			margin-top: 6vw;
+
 		}
 
 		.afspilknap:active {
