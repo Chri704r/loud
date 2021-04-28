@@ -121,17 +121,13 @@
 	.ikoner {
 		display: flex;
 		justify-content: space-between;
+		margin-right: 6vw;
 	}
 
 	.lyt_ikon {
 		width: 3rem;
 		padding: 5px;
 	}
-
-
-
-	/*TABLET*/
-	@media only screen and (max-width: 800px) {}
 
 
 	/*Desktop*/
