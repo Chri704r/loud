@@ -11,9 +11,9 @@
             <a href="">Job</a><br>
             <a href="">Praktikant på LOUD</a><br>
             <div class="some">
-                <img src="wp-content/themes/mytheme/template-parts/footer/facebook.png" alt="facebook">
-                <img src="wp-content/themes/mytheme/template-parts/footer/instagram.png" alt="facebook">
-                <img src="wp-content/themes/mytheme/template-parts/footer/youtube.png" alt="facebook">
+                <img src="<?php echo get_stylesheet_directory_uri()?>/template-parts/footer/facebook.png" alt="facebook">
+                <img src="<?php echo get_stylesheet_directory_uri()?>/template-parts/footer/instagram.png" alt="facebook">
+                <img src="<?php echo get_stylesheet_directory_uri()?>/template-parts/footer/youtube.png" alt="facebook">
             </div>
         </div>
         <div class="kontakt">
@@ -48,42 +48,6 @@
 
     }
 
-    .info_container {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        margin-left: 50px;
-        margin-right: 50px;
-        grid-gap: 20px;
-        color: white;
-    }
-
-    .om_loud {
-
-        grid-column-start: 3;
-        grid-column-end: span 1;
-        margin: 0 auto;
-    }
-
-    .some img {
-
-        width: 3vw;
-        height: 3vw;
-    }
-
-    .some {
-        margin-left: -0.9vw;
-
-    }
-
-
-    .kontakt {
-
-        grid-column-start: 4;
-        grid-column-end: span 1;
-        margin: 0 auto;
-
-    }
-
     .om_loud a {
         text-decoration: none;
         color: white;
@@ -101,6 +65,56 @@
     .mb {
 
         margin-bottom: 1px;
+    }
+
+    .info_container {
+        color: white;
+    }
+
+    .some img {
+
+        width: 25vw;
+        height: 25.5vw;
+    }
+
+
+    @media only screen and (min-width: 600px) {
+
+        .info_container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            margin-left: 50px;
+            margin-right: 50px;
+            grid-gap: 20px;
+
+        }
+
+        .om_loud {
+
+            grid-column-start: 5;
+            grid-column-end: span 1;
+            margin: 0 auto;
+        }
+
+        .some img {
+
+            width: 4.5vw;
+            height: 4vw;
+        }
+
+        .some {
+            margin-left: -0.9vw;
+
+        }
+
+
+        .kontakt {
+
+            grid-column-start: 6;
+            grid-column-end: span 1;
+            margin: 0 auto;
+
+        }
     }
 
 </style>
