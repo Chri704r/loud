@@ -36,6 +36,7 @@
 
 	<template>
 		<div class="episode_container">
+			<img src="<?php echo get_stylesheet_directory_uri()?>/img/playknap.png" alt="" class="afspil_episode">
 			<img src="" alt="" class="podcast_billede">
 			<div class="episode_fakta">
 				<h3 class="episode_navn"></h3>
@@ -93,6 +94,13 @@
 	.episode_tekst {
 		text-align: left;
 		padding-right: 15px;
+	}
+
+	.afspil_episode {
+		position: absolute;
+		left: 16vw;
+		margin-top: 6vw;
+
 	}
 
 	.afspilknap {
