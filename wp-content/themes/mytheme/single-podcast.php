@@ -98,8 +98,8 @@
 
 	.afspil_episode {
 		position: absolute;
-		left: 16vw;
-		margin-top: 6vw;
+		left: 14vw;
+		margin-top: 12vw;
 
 	}
 
@@ -164,6 +164,13 @@
 
 		.podcast_billede {
 			max-width: 50%;
+		}
+
+		.afspil_episode {
+			position: absolute;
+			left: 16vw;
+			margin-top: 6vw;
+
 		}
 
 		.afspilknap:active {
