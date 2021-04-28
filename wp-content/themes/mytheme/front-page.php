@@ -121,7 +121,15 @@
             }
 
             .mere_button {
-                background-color: white !important;
+                background-color: #fff !important;
+                border: none;
+                box-shadow: none;
+                text-transform: uppercase;
+                color: #6f6f6f;
+            }
+
+            button {
+                background-color: #fff !important;
             }
 
             .slide {
@@ -199,13 +207,17 @@
 
                 episoder.forEach(episode => {
                     const klon = template.cloneNode(true);
+
+                    klon.querySelector(".episode_container").setAttribute("id", `pid_${episode.id}`);
+
                     klon.querySelector(".episode_billede").src = episode.podcast_billede.guid;
                     klon.querySelector(".episode_navn").textContent = episode.title.rendered;
                     klon.querySelector(".episode_beskrivelse").textContent = episode.episode_beskrivelse.substring(0, 80) + "...";
 
                     klon.querySelector(".mere_button").innerHTML += `<button>Læs mere</button>`
 
-                    klon.querySelector(".episode_billede").addEventListener("click", () => visDetaljer(episode));
+                    //klon.querySelector(".episode_billede").addEventListener("click", () => visDetaljer(episode));
+                    klon.querySelector(".mere_button").addEventListener("click", () => visMere(episode));
 
                     container.appendChild(klon);
                 })
@@ -235,6 +247,32 @@
                 location.href = hvem.link;
 
             }
+
+
+            //-------VIS MERE KNAP-------
+            function visMere(episode) {
+                console.log("click");
+
+                document.querySelector(".mere_button").removeEventListener("click", () => visMere(episode));
+
+                document.querySelector(`#pid_${episode.id}`).querySelector(".episode_beskrivelse").textContent = episode.episode_beskrivelse;
+
+                document.querySelector(`#pid_${episode.id}`).querySelector(".mere_button").innerHTML = `<button>Læs mindre</button>`
+
+
+                document.querySelector(`#pid_${episode.id}`).querySelector(".mere_button").addEventListener("click", () => visMindre(episode));
+
+            }
+
+            //-------VIS MINDRE KNAP--------
+            function visMindre(episode) {
+                document.querySelector(`#pid_${episode.id}`).querySelector(".episode_beskrivelse").textContent = episode.episode_beskrivelse.substring(0, 90) + "...";
+
+                document.querySelector(`#pid_${episode.id}`).querySelector(".mere_button").innerHTML = `<button>Læs mere</button>`
+
+                document.querySelector(`#pid_${episode.id}`).querySelector(".mere_button").addEventListener("click", () => visMere(episode));
+            }
+
 
             getJson();
 
