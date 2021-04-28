@@ -5,53 +5,44 @@ Author: Gruppe 4
 Version: 1.0.0
 Description: LOUD
 */
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-
 body {
     background-color: white;
 }
-
 h1 {
     font-size: 3rem;
     color: #E4254A;
     font-family: 'Lato', sans-serif;
     margin-top: 30px;
 }
-
 p {
     font-family: 'roboto', sans-serif;
-
 }
-
 .mere_button button {
     border: none;
     box-shadow: none;
     text-transform: uppercase;
     color: #6f6f6f;
 }
-
 .mere_button button:hover {
     color: #e4254a;
     cursor: pointer;
 }
-
 .header-homepage .header-description-row {
     padding: 0 !important;
 }
-
 .header-description {
     padding: 0 !important;
 }
-
-
 video {
     height: 80vh !important;
-
 }
-
 .header-full-height {
     min-height: 80vh !important;
+}
+.navigation-bar {
+    background-color: white;
 }

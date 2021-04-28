@@ -4,7 +4,9 @@
         <div class="main">
             <h1>Podcasts</h1>
             <h2>Alle podcasts</h2>
+
             <section class="alle_podcasts">
+                <div class="alle_knap">Se alle</div>
             </section>
 
             <h2>Kategorier</h2>
@@ -42,6 +44,7 @@
 
             .billede {
                 border-radius: 20px;
+                cursor: pointer;
             }
 
             .mesmerize-inner-page #page .page-content {
@@ -70,8 +73,7 @@
                 display: none;
             }
 
-            .alle_podcasts:after {
-                content: "Se alle";
+            .alle_knap {
                 display: inline;
                 background-color: #e4254a;
                 width: 100%;
@@ -81,6 +83,9 @@
                 padding-top: 43%;
                 font-size: 1.5em;
                 border-radius: 20px;
+                cursor: pointer;
+                grid-column: 6/7;
+                grid-row: 2/3;
             }
 
             .kategori {
@@ -111,6 +116,7 @@
                 background-color: #e5e5e5;
                 font-weight: 600;
                 font-size: 15px;
+                cursor: pointer;
             }
 
             button.filter {
@@ -147,13 +153,14 @@
                     flex-direction: row;
                     overflow-x: scroll;
                 }
-                .alle_podcasts:after {
+                .alle_knap {
                     display: flex;
                     font-size: 3em;
                     padding-top: 20%;
                     line-height: initial;
                     padding-left: 120px;
                     padding-right: 120px;
+                    ali
                 }
                 .billede {
                     width: 70%;
@@ -222,7 +229,9 @@
                 opretKnapper();
                 opretKnapper2();
 
+
             }
+
 
             function opretKnapper() {
 
@@ -274,8 +283,15 @@
                     klon.querySelector(".billede").addEventListener("click", () => visDetaljer(podcast));
 
                     container.appendChild(klon);
+
                 })
 
+            }
+
+            document.querySelector(".alle_knap").addEventListener("click", allePodcasts);
+
+            function allePodcasts() {
+                location.href = "http://piilmanndesigns.dk/kea/09_cms/loud/alle-podcasts/";
             }
 
             function visDetaljer(hvilken) {
