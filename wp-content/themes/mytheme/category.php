@@ -1,9 +1,7 @@
 <?php mesmerize_get_header(); ?>
 
     <main>
-        <h1 class="categori">
-            Kategorien
-        </h1>
+        <h1 class="categori"></h1>
 
         <section class="podcast_container">
         </section>
@@ -31,8 +29,9 @@
 
         h2 {
             font-size: 1.3em;
-            margin-bottom: -8px;
-            margin-top: -5px;
+            margin-bottom: 3px;
+            margin-top: 5px;
+            line-height: 1em;
         }
 
         .podcast_pic {
@@ -67,29 +66,58 @@
             cursor: pointer;
         }
 
+        @media only screen and (max-width: 800px) {
+            .podcast_container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 15px;
+                grid-row-gap: 30px;
+            }
+            .podcast_beskrivelse {
+                text-align: left;
+            }
+            h2 {
+                text-align: left;
+            }
+            .mere_button button {
+                text-align: left;
+            }
+            .mere_button {
+                text-align: left;
+            }
+        }
+
     </style>
 
     <script>
         let podcasts;
         let categories;
-        let beskrivelser;
-        let aktuel_cat = <?php echo get_the_ID() ?>;
+        let aktuel_cat = <?php  $category = get_queried_object();
+            echo $category->term_id ?>;
 
-        console.log("id: ", get_the_ID);
+
+        console.log("id: ", aktuel_cat);
 
         const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?categories=" + aktuel_cat;
-
-        //get_category( get_query_var( 'cat' )
+        const dbCat = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/categories/" + aktuel_cat;
 
 
         async function getJson() {
             const data = await fetch(dbUrl);
             podcasts = await data.json();
 
+            const data2 = await fetch(dbCat);
+            categories = await data2.json();
+
             console.log(podcasts);
 
             visPodcasts();
+            visCategories();
 
+        }
+
+        function visCategories() {
+            document.querySelector("h1").innerHTML = categories.name;
         }
 
 
@@ -102,7 +130,6 @@
             podcasts.forEach(podcast => {
                 const klon = template.cloneNode(true);
 
-                //document.querySelector("h1").innerHTML = podcast.title.rendered;
 
                 klon.querySelector(".template_top").setAttribute("id", `pid_${podcast.id}`);
                 klon.querySelector(".podcast_pic").src = podcast.billede.guid;
