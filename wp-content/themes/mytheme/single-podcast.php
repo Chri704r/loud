@@ -5,15 +5,15 @@
 	<article id="podcast">
 		<div class="top_pocast"><img src="" alt="" class="main_podcast_billede">
 			<div class="ikoner">
-				<img src="some_ikon/splogo.png" class="spotify, lyt_ikon" alt="spotify ikon">
-				<img src="some_ikon/applepodcast.png" class="apple, lyt_ikon" alt="apple podcast ikon">
-				<img src="some_ikon/podimo.png" class="podimo, lyt_ikon" alt="podimo ikon">
-				<img src="some_ikon/googlepodcast.png" class="google, lyt_ikon" alt="google podcast ikon">
+				<a href=""><img src="https://loud.land/wp-content/themes/radioloud/dist/images/spotify_977b3a3c.svg" class="lyt_ikon" alt="spotify ikon"></a>
+				<a href=""><img src="https://loud.land/wp-content/themes/radioloud/dist/images/apple-podcast_2f6140b7.svg" class="lyt_ikon" alt="apple podcast ikon"></a>
+				<a href=""><img src="https://loud.land/wp-content/themes/radioloud/dist/images/podimo_8c4b0116.png" class="lyt_ikon" alt="podimo ikon"></a>
+				<a href=""><img src="https://loud.land/wp-content/themes/radioloud/dist/images/google-podcast_27468af1.svg" class="lyt_ikon" alt="google podcast ikon"></a>
 			</div>
 		</div>
 		<div class="bottom_podcast">
 			<p class="beskrivelse"></p>
-			<button>AFSPIL</button>
+			<button class="afspilknap">AFSPIL</button>
 		</div>
 	</article>
 
@@ -92,7 +92,35 @@
 
 	.episode_tekst {
 		text-align: left;
+		padding-right: 15px;
 	}
+
+	.afspilknap {
+		margin-bottom: 15px;
+		background-color: #E4254A;
+		color: #fff;
+		border-radius: 12px;
+		border: none;
+		padding: 15px 38px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+		font-size: 1.3rem;
+	}
+
+	.ikoner {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.lyt_ikon {
+		width: 3rem;
+		padding: 5px;
+	}
+
+
 
 	/*TABLET*/
 	@media only screen and (max-width: 800px) {}
@@ -128,6 +156,14 @@
 
 		.podcast_billede {
 			max-width: 50%;
+		}
+
+		.afspilknap:active {
+			background-color: #bb1636;
+		}
+
+		.afspilknap:hover {
+			background-color: #bb1636;
 		}
 	}
 
@@ -189,7 +225,7 @@
 					aktuelPodcast);
 				let klon = template.cloneNode(true);
 
-				klon.querySelector(".episode_container").setAttribute("id", `pid_${podcast.id}`);
+				klon.querySelector(".episode_container").setAttribute("id", `pid_${episode.id}`);
 				klon.querySelector(".podcast_billede").src = episode.podcast_billede.guid;
 				klon.querySelector(".podcast_billede").alt = episode.podcast_billede.guid;
 				klon.querySelector(".podcast_billede").title = episode.podcast_billede.guid;
@@ -214,23 +250,23 @@
 
 		document.querySelector(".mere_button").removeEventListener("click", () => visMere(episode));
 
-		document.querySelector(`#pid_${podcast.id}`).querySelector(".episode_tekst").innerHTML = episode.episode_beskrivelse;
+		document.querySelector(`#pid_${episode.id}`).querySelector(".episode_tekst").innerHTML = episode.episode_beskrivelse;
 
-		document.querySelector(`#pid_${podcast.id}`).querySelector(".mere_button").innerHTML = `<button>Læs mindre</button>`
+		document.querySelector(`#pid_${episode.id}`).querySelector(".mere_button").innerHTML = `<button>Læs mindre</button>`
 
 
-		document.querySelector(`#pid_${podcast.id}`).querySelector(".mere_button").addEventListener("click", () => visMindre(episode));
+		document.querySelector(`#pid_${episode.id}`).querySelector(".mere_button").addEventListener("click", () => visMindre(episode));
 
 	}
 
 	//-------VIS MINDRE KNAP--------
 	function visMindre(episode) {
 		console.log(episode);
-		document.querySelector(`#pid_${podcast.id}`).querySelector(".episode_tekst").textContent = episode.episode_beskrivelse.substring(0, 90) + "...";
+		document.querySelector(`#pid_${episode.id}`).querySelector(".episode_tekst").textContent = episode.episode_beskrivelse.substring(0, 90) + "...";
 
-		document.querySelector(`#pid_${podcast.id}`).querySelector(".mere_button").innerHTML = `<button>Læs mere</button>`
+		document.querySelector(`#pid_${episode.id}`).querySelector(".mere_button").innerHTML = `<button>Læs mere</button>`
 
-		document.querySelector(`#pid_${podcast.id}`).querySelector(".mere_button").addEventListener("click", () => visMere(episode));
+		document.querySelector(`#pid_${episode.id}`).querySelector(".mere_button").addEventListener("click", () => visMere(episode));
 	}
 
 
