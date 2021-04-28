@@ -15,7 +15,11 @@
 
 	<h1>LOUD Live</h1>
 
-	<nav id="filtrering"></nav>
+	<button id="dropdown">
+		<p>Vis ugedage</p>
+	</button>
+	<nav id="filtrering">
+	</nav>
 
 
 
@@ -154,8 +158,13 @@
 			cursor: pointer
 		}
 
-		.filter:active {
-			background-color: aqua;
+		.min_active_dag {
+			color: #E4254A;
+
+		}
+
+		.min_active {
+			background-color: #BCBCBC;
 		}
 
 		.filter:hover {
@@ -182,6 +191,10 @@
 			padding-top: 90%;
 		}
 
+		#dropdown {
+			display: none;
+		}
+
 
 
 		@media only screen and (max-width: 800px) {
@@ -197,6 +210,8 @@
 			.beskrivelse {
 				text-align: left;
 			}
+
+
 
 
 		}
@@ -216,7 +231,22 @@
 				text-align: left;
 			}
 
+
+
 		}
+
+		@media screen and (max-width: 768px) {
+
+			.filter {
+				display: none;
+			}
+
+
+			#dropdown {
+				display: block;
+
+			}
+
 		}
 
 	</style>
@@ -226,10 +256,11 @@
 
 	<!------- SCRIPT BEGYNDER ------->
 	<script>
+		"use strict";
 		let podcasts;
 		let categories;
 		let filterDag;
-
+		let isDropdownOpen = false;
 		const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?per_page=100";
 		const catUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/ugedag";
 
@@ -240,7 +271,8 @@
 			const catdata = await fetch(catUrl);
 			podcasts = await data.json();
 			categories = await catdata.json();
-			console.log(categories);
+			categories.sort((a, b) => (a.rakkefolge > b.rakkefolge) ? 1 : -1);
+			console.log("categories", categories);
 
 			let d = new Date().getDay();
 			if (d == 0) {
@@ -251,22 +283,59 @@
 				filterDag = 39;
 			} else if (d == 3) {
 				filterDag = 38;
+			} else if (d == 4) {
+				filterDag = 37;
+			} else if (d == 5) {
+				filterDag = 36;
+			} else if (d == 6) {
+				filterDag = 35;
 			}
 			console.log("filterDag", filterDag);
 
 			visPodcasts();
 			opretKnapper();
+			opretDropdown();
 		}
 
 
 		function opretKnapper() {
 			console.log("opretKnapper");
 			categories.forEach(cat => {
-				document.querySelector("#filtrering").innerHTML += `<button class="filter" data-dag="${cat.id}">${cat.name}</button>`
+				if (cat.id == filterDag) {
+					document.querySelector("#filtrering").innerHTML += `<button class="filter min_active_dag" data-dag="${cat.id}">${cat.name}</button>`
+					console.log("filterDag", filterDag);
+				} else {
+					document.querySelector("#filtrering").innerHTML += `<button class="filter" data-dag="${cat.id}">${cat.name}</button>`
+				}
 			})
 
 			addEventListenersToButtons();
 		}
+
+		function opretDropdown() {
+			document.querySelector("#dropdown").addEventListener("click", openDropdown);
+		}
+
+		function openDropdown() {
+
+			if (isDropdownOpen == false) {
+
+
+				document.querySelectorAll(".filter").forEach(elm =>
+					elm.style.display = "block");
+				document.querySelector("#filtrering").style.position = "fixed";
+			} else {
+				document.querySelectorAll(".filter").forEach(elm =>
+					elm.style.display = "none");
+				// Det der skal ske når den skal lukke igen
+			}
+			isDropdownOpen = !isDropdownOpen;
+		}
+
+
+
+
+
 
 		function addEventListenersToButtons() {
 			console.log("addEventListenersToButtons")
@@ -276,13 +345,22 @@
 
 
 		function filtrering() {
-			console.log("filtrering")
+			console.log("filtrering", this)
 			filterDag = this.dataset.dag;
 			console.log("filterDag", filterDag);
 
 			visPodcasts();
-		}
 
+
+			document.querySelectorAll("#filtrering button").forEach(elm =>
+				elm.classList.remove("min_active"));
+
+
+			this.classList.add("min_active");
+
+
+
+		}
 
 		function visPodcasts() {
 
