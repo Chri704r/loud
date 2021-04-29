@@ -75,8 +75,11 @@
 	}
 
 	.back {
-		width: 5vw;
-		height: 7vw;
+		width: 25px;
+		height: 40px;
+		margin-left: 3vw;
+		display: flex;
+		margin-top: 3.5vw;
 	}
 
 	.beskrivelse {
@@ -144,6 +147,14 @@
 			margin: 0 auto;
 			padding-left: 30px;
 			padding-right: 30px;
+		}
+
+		.back {
+			width: 25px;
+			height: 40px;
+			margin-left: -5vw;
+			display: flex;
+			margin-top: 1.5vw;
 		}
 
 		#podcast {
