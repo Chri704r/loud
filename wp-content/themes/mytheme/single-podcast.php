@@ -1,5 +1,6 @@
 <?php mesmerize_get_header(); ?>
 <main id="main_podcast_single">
+
     <button class="back">Tilbage</button>
     <h1 class="podcast_navn">Podcasten</h1>
     <article id="podcast">
@@ -45,6 +46,7 @@
             </div>
         </div>
     </template>
+
 </main>
 
 <style>
@@ -125,10 +127,41 @@
         margin-right: 6vw;
     }
 
+    .hidden {
+        display: none;
+    }
+
     .lyt_ikon {
         width: 3rem;
         padding: 5px;
     }
+
+    #afspiller {
+        position: relative;
+        background-color: white;
+        width: 100%;
+        height: 4vw;
+        border-color: black;
+        border-style: solid;
+        position: fixed;
+        bottom: 0;
+    }
+
+    #red_line {
+        position: absolute;
+        background-color: darkred;
+        width: 80%;
+        height: 0.5vw;
+        border-color: black;
+        border-style: solid;
+        border-radius: 5px;
+        position: fixed;
+        bottom: 1vw;
+        left: 10%;
+
+    }
+
+
 
 
     /*Desktop*/
@@ -207,8 +240,8 @@
     }
 
     function afspillerClick() {
-        console.log("afspillerClick");
-
+        console.log(afspillerClick);
+        document.querySelector("#afspiller").classList.remove("hidden");
 
     }
 
@@ -298,3 +331,6 @@
 
 </script>
 <?php get_footer(); ?>
+<div id="afspiller" class="hidden">
+    <div id="red_line"></div>
+</div>
