@@ -66,6 +66,7 @@
 <?php get_footer(); ?>
 <div id="afspiller" class="hidden">
     <img src="<?php echo get_stylesheet_directory_uri()?>/img/afspiller.png" alt="afspiller" id="spiller" class="">
+
     <!--    <div id="red_line"></div>-->
 </div>
 
@@ -275,23 +276,25 @@
             text-align: left;
         }
 
-   #afspiller {
-        position: relative;
-        background-color: #F2F2F2;
-        width: 100%;
-        height: 20vw;
-        border-color: black;
-        border-style: solid;
-        position: fixed;
-        bottom: 0;
-        display: grid;
-        justify-content: center;
-    }
+        #afspiller {
+            position: relative;
+            background-color: #F2F2F2;
+            width: 100%;
+            height: 20vw;
+            border-color: black;
+            border-style: solid;
+            position: fixed;
+            bottom: 0;
+            display: grid;
+            justify-content: center;
+        }
 
-    #afspiller img {
-        width: 68vw;
-        height: 20vw;
-    }
+        #afspiller img {
+            width: 68vw;
+            height: 20vw;
+        }
+
+
 
     }
 
@@ -372,6 +375,17 @@
         console.log(afspillerClick);
         document.querySelector("#afspiller").classList.remove("hidden");
         document.querySelector("#spiller").classList.remove("hidden");
+
+        document.querySelector("#afspiller").addEventListener("click", stopAfspiller);
+
+    }
+
+     function stopAfspiller() {
+        console.log(stopAfspiller);
+        document.querySelector("#afspiller").classList.add("hidden");
+        document.querySelector("#spiller").classList.add("hidden");
+
+
 
     }
 
