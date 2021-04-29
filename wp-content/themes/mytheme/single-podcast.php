@@ -110,8 +110,8 @@
 
 	.afspil_episode {
 		position: absolute;
-		left: 14vw;
-		margin-top: 12vw;
+		left: 33px;
+		margin-top: 17px;
 
 	}
 
@@ -206,8 +206,8 @@
 
 		.afspil_episode {
 			position: absolute;
-			left: 8vw;
-			margin-top: 6vw;
+			left: 75px;
+			margin-top: 45px;
 
 		}
 
