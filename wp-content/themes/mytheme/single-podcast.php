@@ -107,9 +107,9 @@
 
 	.afspil_episode {
 		position: absolute;
-		left: 7vw;
-		margin-top: 9vw;
-		width: 14rem;
+		left: 10vw;
+		margin-top: 11vw;
+		width: 11rem;
 
 	}
 
@@ -181,9 +181,8 @@
 		}
 
 		.afspil_episode {
-			position: absolute;
-			left: 5vw;
-			margin-top: 4vw;
+			left: 6vw;
+			margin-top: 5vw;
 		}
 
 		.afspilknap:active {
