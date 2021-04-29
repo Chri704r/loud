@@ -1,5 +1,26 @@
 <?php mesmerize_get_header(); ?>
 <main id="main_podcast_single">
+<<<<<<< HEAD
+
+    <button class="back">Tilbage</button>
+    <h1 class="podcast_navn">Podcasten</h1>
+    <article id="podcast">
+        <div class="top_pocast"><img src="" alt="" class="main_podcast_billede">
+            <div class="ikoner">
+                <a href=""><img src="https://loud.land/wp-content/themes/radioloud/dist/images/spotify_977b3a3c.svg" class="lyt_ikon" alt="spotify ikon"></a>
+                <a href=""><img src="https://loud.land/wp-content/themes/radioloud/dist/images/apple-podcast_2f6140b7.svg" class="lyt_ikon" alt="apple podcast ikon"></a>
+                <a href=""><img src="https://loud.land/wp-content/themes/radioloud/dist/images/podimo_8c4b0116.png" class="lyt_ikon" alt="podimo ikon"></a>
+                <a href=""><img src="https://loud.land/wp-content/themes/radioloud/dist/images/google-podcast_27468af1.svg" class="lyt_ikon" alt="google podcast ikon"></a>
+            </div>
+        </div>
+        <div class="bottom_podcast">
+            <p class="beskrivelse"></p>
+            <button class="afspilknap">AFSPIL</button>
+        </div>
+    </article>
+
+    <!-- Tilføj evt. senere nyeste afsnit
+=======
 	<img src="<?php echo get_stylesheet_directory_uri()?>/img/tilbagepil.png" alt="" class="back" width="45 px" height="60 px">
 	<h1 class="podcast_navn">Podcasten</h1>
 	<article id="podcast">
@@ -18,6 +39,7 @@
 	</article>
 
 	<!-- Tilføj evt. senere nyeste afsnit
+>>>>>>> origin/master
 <article id="ny_podcast">
 	<h2>Nyeste episode</h2>
 	<div class="nyeste_container">
@@ -30,6 +52,188 @@
 </article>
 -->
 
+<<<<<<< HEAD
+    <h2>Alle Episoder</h2>
+    <section class="episode_section">
+    </section>
+
+    <template>
+        <div class="episode_container">
+            <img src="<?php echo get_stylesheet_directory_uri()?>/img/playknap.png" alt="" class="afspil_episode">
+            <img src="" alt="" class="podcast_billede">
+            <div class="episode_fakta">
+                <h3 class="episode_navn"></h3>
+                <p class="episode_tekst"></p>
+                <div class="mere_button"></div>
+            </div>
+        </div>
+    </template>
+
+</main>
+
+<style>
+    main {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .episode_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        margin-bottom: 15px;
+        background-color: #F5F5F5;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .episode_container:before {
+        display: none;
+    }
+
+    .episode_container:after {
+        display: none;
+    }
+
+    .beskrivelse {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .podcast_billede {
+        max-width: 100%;
+        margin: 5px;
+    }
+
+    .main_podcast_billede {
+        max-width: 100%;
+    }
+
+    .episode_navn {
+        text-align: left;
+    }
+
+    .episode_tekst {
+        text-align: left;
+        padding-right: 15px;
+    }
+
+    .afspil_episode {
+        position: absolute;
+        left: 14vw;
+        margin-top: 12vw;
+
+    }
+
+    .afspilknap {
+        margin-bottom: 15px;
+        background-color: #E4254A;
+        color: #fff;
+        border-radius: 12px;
+        border: none;
+        padding: 15px 38px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+
+    .ikoner {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 6vw;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .lyt_ikon {
+        width: 3rem;
+        padding: 5px;
+    }
+
+    #afspiller {
+        position: relative;
+        background-color: white;
+        width: 100%;
+        height: 4vw;
+        border-color: black;
+        border-style: solid;
+        position: fixed;
+        bottom: 0;
+    }
+
+    #red_line {
+        position: absolute;
+        background-color: darkred;
+        width: 80%;
+        height: 0.5vw;
+        border-color: black;
+        border-style: solid;
+        border-radius: 5px;
+        position: fixed;
+        bottom: 1vw;
+        left: 10%;
+
+    }
+
+
+
+
+    /*Desktop*/
+    @media only screen and (min-width: 992px) {
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        #podcast {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+            margin-bottom: 15px;
+        }
+
+        #podcast:before {
+            display: none;
+        }
+
+        #podcast:after {
+            display: none;
+        }
+
+        .main_podcast_billede {
+            max-width: 85%;
+        }
+
+        .podcast_billede {
+            max-width: 50%;
+        }
+
+        .afspil_episode {
+            position: absolute;
+            left: 16vw;
+            margin-top: 6vw;
+
+        }
+
+        .afspilknap:active {
+            background-color: #bb1636;
+        }
+
+        .afspilknap:hover {
+            background-color: #bb1636;
+        }
+    }
+=======
 	<h2>Alle Episoder</h2>
 	<section class="episode_section">
 	</section>
@@ -193,6 +397,7 @@
 			background-color: #bb1636;
 		}
 	}
+>>>>>>> origin/master
 
 </style>
 
@@ -221,9 +426,15 @@
 		document.querySelector(".afspil_episode").addEventListener("click", afspillerClick);
 	}
 
+<<<<<<< HEAD
+    function afspillerClick() {
+        console.log(afspillerClick);
+        document.querySelector("#afspiller").classList.remove("hidden");
+=======
 	function afspillerClick() {
 		console.log("afspillerClick");
 
+>>>>>>> origin/master
 
 	}
 
@@ -313,3 +524,6 @@
 
 </script>
 <?php get_footer(); ?>
+<div id="afspiller" class="hidden">
+    <div id="red_line"></div>
+</div>

@@ -45,6 +45,7 @@
         max-width: 100%;
         background-color: #1f2338;
         padding: 30px;
+        text-align: left !important;
 
     }
 
@@ -82,7 +83,7 @@
 
         .info_container {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(9, 1fr);
             margin-left: 50px;
             margin-right: 50px;
             grid-gap: 20px;
@@ -91,8 +92,8 @@
 
         .om_loud {
 
-            grid-column-start: 5;
-            grid-column-end: span 1;
+            grid-column-start: 4;
+            grid-column-end: span 2;
             margin: 0 auto;
         }
 
@@ -100,10 +101,12 @@
 
             width: 4.5vw;
             height: 4vw;
+
         }
 
         .some {
-            margin-left: -0.9vw;
+            margin-left: -1.2vw;
+
 
         }
 
