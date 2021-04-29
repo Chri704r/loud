@@ -65,8 +65,8 @@
 
 <?php get_footer(); ?>
 <div id="afspiller" class="hidden">
-   <img src="img/afspiller.png" alt="afspiller">
-<!--    <div id="red_line"></div>-->
+    <img src="<?php echo get_stylesheet_directory_uri()?>/img/afspiller.png" alt="afspiller" id="spiller" class="">
+    <!--    <div id="red_line"></div>-->
 </div>
 
 
@@ -218,36 +218,26 @@
 
     #afspiller {
         position: relative;
-        background-color: white;
+        background-color: #F2F2F2;
         width: 100%;
         height: 4vw;
         border-color: black;
         border-style: solid;
         position: fixed;
         bottom: 0;
+        display: grid;
+        justify-content: center;
     }
 
     #afspiller img {
-        width: 400px;
+        width: 14vw;
         height: 4vw;
     }
 
-    #red_line {
-        position: absolute;
-        background-color: darkred;
-        width: 80%;
-        height: 0.5vw;
-        border-color: black;
-        border-style: solid;
-        border-radius: 5px;
-        position: fixed;
-        bottom: 1vw;
-        left: 10%;
 
-    }
 
-      .hidden {
-        display: none;
+    .hidden {
+        display: none !important;
     }
 
 
@@ -285,7 +275,23 @@
             text-align: left;
         }
 
+   #afspiller {
+        position: relative;
+        background-color: #F2F2F2;
+        width: 100%;
+        height: 20vw;
+        border-color: black;
+        border-style: solid;
+        position: fixed;
+        bottom: 0;
+        display: grid;
+        justify-content: center;
+    }
 
+    #afspiller img {
+        width: 68vw;
+        height: 20vw;
+    }
 
     }
 
@@ -327,6 +333,7 @@
 
     async function getJson() {
         console.log("getJson");
+
         const data = await fetch(dbUrl);
         const catdata = await fetch(catUrl);
         podcasts = await data.json();
@@ -356,12 +363,15 @@
         opretKnapper();
         opretDropdown();
 
-         document.querySelector("#live").addEventListener("click", afspillerClick);
+
+
+        document.querySelector("#live").addEventListener("click", afspillerClick);
     }
 
-      function afspillerClick() {
+    function afspillerClick() {
         console.log(afspillerClick);
         document.querySelector("#afspiller").classList.remove("hidden");
+        document.querySelector("#spiller").classList.remove("hidden");
 
     }
 
