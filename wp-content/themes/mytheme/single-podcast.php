@@ -1,6 +1,6 @@
 <?php mesmerize_get_header(); ?>
 <main id="main_podcast_single">
-	<button class="back">Tilbage</button>
+	<img src="<?php echo get_stylesheet_directory_uri()?>/img/tilbagepil.png" alt="" class="back" width="45 px" height="60 px">
 	<h1 class="podcast_navn">Podcasten</h1>
 	<article id="podcast">
 		<div class="top_pocast"><img src="" alt="" class="main_podcast_billede">
@@ -74,6 +74,11 @@
 		display: none;
 	}
 
+	.back {
+		width: 5vw;
+		height: 7vw;
+	}
+
 	.beskrivelse {
 		padding: 10px;
 		text-align: left;
@@ -99,8 +104,9 @@
 
 	.afspil_episode {
 		position: absolute;
-		left: 14vw;
-		margin-top: 12vw;
+		left: 7vw;
+		margin-top: 9vw;
+		width: 14rem;
 
 	}
 
@@ -165,9 +171,8 @@
 
 		.afspil_episode {
 			position: absolute;
-			left: 8vw;
-			margin-top: 6vw;
-
+			left: 5vw;
+			margin-top: 4vw;
 		}
 
 		.afspilknap:active {
@@ -260,7 +265,7 @@
 
 			}
 		})
-		document.querySelector("button").addEventListener("click", tilbageTilMenu);
+		document.querySelector(".back").addEventListener("click", tilbageTilMenu);
 
 	}
 
