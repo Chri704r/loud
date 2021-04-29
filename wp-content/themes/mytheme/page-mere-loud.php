@@ -33,6 +33,10 @@
 </div>
 
 <style>
+	.mesmerize-inner-page #page .page-content {
+		padding-top: 0rem;
+	}
+
 	.wp-block-columns p {
 		text-align: left !important;
 		color: #1E2236;
