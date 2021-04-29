@@ -146,22 +146,22 @@
 	}
 
 	#afspiller {
-        position: relative;
-        background-color: #F2F2F2;
-        width: 100%;
-        height: 4vw;
-        border-color: black;
-        border-style: solid;
-        position: fixed;
-        bottom: 0;
-        display: grid;
-        justify-content: center;
-    }
+		position: relative;
+		background-color: #F2F2F2;
+		width: 100%;
+		height: 4vw;
+		border-color: black;
+		border-style: solid;
+		position: fixed;
+		bottom: 0;
+		display: grid;
+		justify-content: center;
+	}
 
-    #afspiller img {
-        width: 14vw;
-        height: 4vw;
-    }
+	#afspiller img {
+		width: 14vw;
+		height: 4vw;
+	}
 
 
 
@@ -225,20 +225,22 @@
 <script>
 	document.addEventListener("DOMContentLoaded", getJson);
 	let podcast;
-	let episoder;
+	let episode;
 	//let nyEpisode;
 	let aktuelPodcast = <?php echo get_the_ID() ?>;
 
 	//kun den relevante podcast bliver hentet ind
 	const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast/" + aktuelPodcast;
-	const episodeUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/episode?per_page=100";
+	//	const episodeUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/episode?per_page=100";
 
 	async function getJson() {
 		const data = await fetch(dbUrl);
 		podcast = await data.json();
+		console.log("podcast: ", podcast);
 
-		const data2 = await fetch(episodeUrl);
-		episoder = await data2.json();
+		//		const data2 = await fetch(episodeUrl);
+		//		episoder = await data2.json();
+		//		console.log("episode: ", episode);
 
 
 		visPodcast();
@@ -250,22 +252,22 @@
 
 
 	function afspillerClick() {
-        console.log(afspillerClick);
-        document.querySelector("#afspiller").classList.remove("hidden");
-        document.querySelector("#spiller").classList.remove("hidden");
+		console.log(afspillerClick);
+		document.querySelector("#afspiller").classList.remove("hidden");
+		document.querySelector("#spiller").classList.remove("hidden");
 
-        document.querySelector("#afspiller").addEventListener("click", stopAfspiller);
+		document.querySelector("#afspiller").addEventListener("click", stopAfspiller);
 
-    }
+	}
 
-     function stopAfspiller() {
-        console.log(stopAfspiller);
-        document.querySelector("#afspiller").classList.add("hidden");
-        document.querySelector("#spiller").classList.add("hidden");
+	function stopAfspiller() {
+		console.log(stopAfspiller);
+		document.querySelector("#afspiller").classList.add("hidden");
+		document.querySelector("#spiller").classList.add("hidden");
 
 
 
-    }
+	}
 
 	function visPodcast() {
 		console.log("visPodcasts");
@@ -292,18 +294,25 @@
 		let sektion = document.querySelector(".episode_section");
 		let template = document.querySelector("template").content;
 
-		episoder.forEach(episode => {
-			console.log("loop kører id :" +
-				aktuelPodcast);
-			if (episode.tilhorer_podcast == aktuelPodcast) {
-				console.log("loop kører id :" +
-					aktuelPodcast);
+		podcast.episoder.forEach(episodenummer => {
+			//			console.log("loop kører id :" +
+			//				aktuelPodcast);
+			//			if (episoder.tilhorer_podcast == aktuelPodcast) {
+			//				console.log("loop kører id :" +
+			//					aktuelPodcast);
+
+			async function json2() {
+				const episodeUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/episode/" + episodenummer;
+				const data2 = await fetch(episodeUrl);
+				episode = await data2.json();
+				console.log("episode: ", episode);
+
 				let klon = template.cloneNode(true);
 
 				klon.querySelector(".episode_container").setAttribute("id", `pid_${episode.id}`);
 				klon.querySelector(".podcast_billede").src = episode.podcast_billede.guid;
-				klon.querySelector(".podcast_billede").alt = episode.podcast_billede.guid;
-				klon.querySelector(".podcast_billede").title = episode.podcast_billede.guid;
+				klon.querySelector(".podcast_billede").alt = episode.podcast_billede.post_title;
+				klon.querySelector(".podcast_billede").title = episode.podcast_billede.post_title;
 
 				klon.querySelector(".episode_navn").innerHTML = episode.episode_navn;
 
@@ -312,12 +321,14 @@
 				klon.querySelector(".mere_button").addEventListener("click", () => visMere(episode));
 
 				sektion.appendChild(klon);
-
 			}
+			json2();
 		})
 		document.querySelector(".back").addEventListener("click", tilbageTilMenu);
-
 	}
+
+
+
 
 	//-------VIS MERE KNAP-------
 	function visMere(episode) {
@@ -349,10 +360,8 @@
 		history.back();
 	}
 
-	getJson();
-
 </script>
 <?php get_footer(); ?>
 <div id="afspiller" class="hidden">
-    <img src="<?php echo get_stylesheet_directory_uri()?>/img/afspiller.png" alt="afspiller" id="spiller" class="">
+	<img src="<?php echo get_stylesheet_directory_uri()?>/img/afspiller.png" alt="afspiller" id="spiller" class="">
 </div>
