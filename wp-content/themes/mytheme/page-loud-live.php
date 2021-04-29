@@ -67,7 +67,7 @@
 <div id="afspiller" class="hidden">
     <img src="<?php echo get_stylesheet_directory_uri()?>/img/afspiller.png" alt="afspiller" id="spiller" class="">
 
-    <!--    <div id="red_line"></div>-->
+
 </div>
 
 

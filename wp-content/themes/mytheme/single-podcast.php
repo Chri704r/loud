@@ -137,7 +137,7 @@
 	}
 
 	.hidden {
-		display: none;
+		display: none !important;
 	}
 
 	.lyt_ikon {
@@ -146,29 +146,24 @@
 	}
 
 	#afspiller {
-		position: relative;
-		background-color: white;
-		width: 100%;
-		height: 4vw;
-		border-color: black;
-		border-style: solid;
-		position: fixed;
-		bottom: 0;
-	}
+        position: relative;
+        background-color: #F2F2F2;
+        width: 100%;
+        height: 4vw;
+        border-color: black;
+        border-style: solid;
+        position: fixed;
+        bottom: 0;
+        display: grid;
+        justify-content: center;
+    }
 
-	#red_line {
-		position: absolute;
-		background-color: darkred;
-		width: 80%;
-		height: 0.5vw;
-		border-color: black;
-		border-style: solid;
-		border-radius: 5px;
-		position: fixed;
-		bottom: 1vw;
-		left: 10%;
+    #afspiller img {
+        width: 14vw;
+        height: 4vw;
+    }
 
-	}
+
 
 
 
@@ -250,14 +245,27 @@
 		visEpisoder();
 
 		document.querySelector(".afspil_episode").addEventListener("click", afspillerClick);
+		document.querySelector(".afspilknap").addEventListener("click", afspillerClick);
 	}
 
 
 	function afspillerClick() {
-		console.log(afspillerClick);
-		document.querySelector("#afspiller").classList.remove("hidden");
-		console.log("afspillerClick");
-	}
+        console.log(afspillerClick);
+        document.querySelector("#afspiller").classList.remove("hidden");
+        document.querySelector("#spiller").classList.remove("hidden");
+
+        document.querySelector("#afspiller").addEventListener("click", stopAfspiller);
+
+    }
+
+     function stopAfspiller() {
+        console.log(stopAfspiller);
+        document.querySelector("#afspiller").classList.add("hidden");
+        document.querySelector("#spiller").classList.add("hidden");
+
+
+
+    }
 
 	function visPodcast() {
 		console.log("visPodcasts");
@@ -345,8 +353,6 @@
 
 </script>
 <?php get_footer(); ?>
-<!--
 <div id="afspiller" class="hidden">
-	<div id="red_line"></div>
+    <img src="<?php echo get_stylesheet_directory_uri()?>/img/afspiller.png" alt="afspiller" id="spiller" class="">
 </div>
--->
