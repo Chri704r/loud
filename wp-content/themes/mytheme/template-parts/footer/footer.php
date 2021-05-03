@@ -106,8 +106,8 @@
 
         .some img {
             margin-top: 20px;
-            width: 2vw;
-            height: 2vw;
+            width: 50px;
+            height: 50px;
 
         }
 
