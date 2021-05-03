@@ -1,6 +1,8 @@
 <?php mesmerize_get_header(); ?>
 <main id="main_podcast_single">
-	<button class="back">Tilbage</button>
+
+
+	<img src="<?php echo get_stylesheet_directory_uri()?>/img/tilbagepil.png" alt="" class="back" width="45 px" height="60 px">
 	<h1 class="podcast_navn">Podcasten</h1>
 	<article id="podcast">
 		<div class="top_pocast"><img src="" alt="" class="main_podcast_billede">
@@ -36,6 +38,7 @@
 
 	<template>
 		<div class="episode_container">
+			<img src="<?php echo get_stylesheet_directory_uri()?>/img/playknap.png" alt="" class="afspil_episode">
 			<img src="" alt="" class="podcast_billede">
 			<div class="episode_fakta">
 				<h3 class="episode_navn"></h3>
@@ -44,14 +47,25 @@
 			</div>
 		</div>
 	</template>
+
 </main>
 
 <style>
 	main {
+		position: relative;
 		max-width: 1200px;
 		margin: 0 auto;
 		padding-left: 10px;
 		padding-right: 10px;
+	}
+
+	.back {
+		display: flex;
+		margin-left: 1rem;
+		margin-top: 1rem;
+		width: 25px;
+		height: 40px;
+		cursor: pointer;
 	}
 
 	.episode_container {
@@ -80,6 +94,7 @@
 	.podcast_billede {
 		max-width: 100%;
 		margin: 5px;
+
 	}
 
 	.main_podcast_billede {
@@ -93,6 +108,14 @@
 	.episode_tekst {
 		text-align: left;
 		padding-right: 15px;
+	}
+
+	.afspil_episode {
+		position: absolute;
+		left: 33px;
+		margin-top: 17px;
+		cursor: pointer;
+
 	}
 
 	.afspilknap {
@@ -113,6 +136,11 @@
 	.ikoner {
 		display: flex;
 		justify-content: space-between;
+		margin-right: 6vw;
+	}
+
+	.hidden {
+		display: none !important;
 	}
 
 	.lyt_ikon {
@@ -120,10 +148,27 @@
 		padding: 5px;
 	}
 
+	#afspiller {
+		position: relative;
+		background-color: #F2F2F2;
+		width: 100%;
+		height: 4vw;
+		border-color: black;
+		border-style: solid;
+		position: fixed;
+		bottom: 0;
+		display: grid;
+		justify-content: center;
+	}
+
+	#afspiller img {
+		width: 14vw;
+		height: 4vw;
+	}
 
 
-	/*TABLET*/
-	@media only screen and (max-width: 800px) {}
+
+
 
 
 	/*Desktop*/
@@ -133,6 +178,10 @@
 			margin: 0 auto;
 			padding-left: 30px;
 			padding-right: 30px;
+		}
+
+		.back {
+			margin-left: -6rem;
 		}
 
 		#podcast {
@@ -158,6 +207,13 @@
 			max-width: 50%;
 		}
 
+		.afspil_episode {
+			position: absolute;
+			left: 75px;
+			margin-top: 45px;
+
+		}
+
 		.afspilknap:active {
 			background-color: #bb1636;
 		}
@@ -172,24 +228,48 @@
 <script>
 	document.addEventListener("DOMContentLoaded", getJson);
 	let podcast;
-	let episoder;
+	let episode;
 	//let nyEpisode;
 	let aktuelPodcast = <?php echo get_the_ID() ?>;
 
 	//kun den relevante podcast bliver hentet ind
 	const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast/" + aktuelPodcast;
-	const episodeUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/episode?per_page=100";
+	//	const episodeUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/episode?per_page=100";
 
 	async function getJson() {
 		const data = await fetch(dbUrl);
 		podcast = await data.json();
+		console.log("podcast: ", podcast);
 
-		const data2 = await fetch(episodeUrl);
-		episoder = await data2.json();
+		//		const data2 = await fetch(episodeUrl);
+		//		episoder = await data2.json();
+		//		console.log("episode: ", episode);
 
 
 		visPodcast();
 		visEpisoder();
+
+
+		document.querySelector(".afspilknap").addEventListener("click", afspillerClick);
+
+
+	}
+
+
+	function afspillerClick() {
+		console.log("afspillerClick");
+		document.removeEventListener("click", afspillerClick);
+		document.querySelector("#afspiller").classList.remove("hidden");
+		document.querySelector("#spiller").classList.remove("hidden");
+
+		document.querySelector("#afspiller").addEventListener("click", stopAfspiller);
+
+	}
+
+	function stopAfspiller() {
+		console.log("stopAfspiller");
+		document.querySelector("#afspiller").classList.add("hidden");
+
 	}
 
 	function visPodcast() {
@@ -217,32 +297,41 @@
 		let sektion = document.querySelector(".episode_section");
 		let template = document.querySelector("template").content;
 
-		episoder.forEach(episode => {
-			console.log("loop kører id :" +
-				aktuelPodcast);
-			if (episode.tilhorer_podcast == aktuelPodcast) {
-				console.log("loop kører id :" +
-					aktuelPodcast);
+		podcast.episoder.forEach(episodenummer => {
+			//			console.log("loop kører id :" +
+			//				aktuelPodcast);
+			//			if (episoder.tilhorer_podcast == aktuelPodcast) {
+			//				console.log("loop kører id :" +
+			//					aktuelPodcast);
+
+			async function json2() {
+				const episodeUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/episode/" + episodenummer;
+				const data2 = await fetch(episodeUrl);
+				episode = await data2.json();
+				console.log("episode: ", episode);
+
 				let klon = template.cloneNode(true);
 
 				klon.querySelector(".episode_container").setAttribute("id", `pid_${episode.id}`);
 				klon.querySelector(".podcast_billede").src = episode.podcast_billede.guid;
-				klon.querySelector(".podcast_billede").alt = episode.podcast_billede.guid;
-				klon.querySelector(".podcast_billede").title = episode.podcast_billede.guid;
+				klon.querySelector(".podcast_billede").alt = episode.podcast_billede.post_title;
+				klon.querySelector(".podcast_billede").title = episode.podcast_billede.post_title;
 
 				klon.querySelector(".episode_navn").innerHTML = episode.episode_navn;
 
 				klon.querySelector(".episode_tekst").innerHTML = episode.episode_beskrivelse.substring(0, 90) + "...";
 				klon.querySelector(".mere_button").innerHTML += `<button>Læs mere</button>`
 				klon.querySelector(".mere_button").addEventListener("click", () => visMere(episode));
-
+				klon.querySelector(".afspil_episode").addEventListener("click", afspillerClick);
 				sektion.appendChild(klon);
-
 			}
+			json2();
 		})
-		document.querySelector("button").addEventListener("click", tilbageTilMenu);
-
+		document.querySelector(".back").addEventListener("click", tilbageTilMenu);
 	}
+
+
+
 
 	//-------VIS MERE KNAP-------
 	function visMere(episode) {
@@ -274,7 +363,8 @@
 		history.back();
 	}
 
-	getJson();
-
 </script>
 <?php get_footer(); ?>
+<div id="afspiller" class="hidden">
+	<img src="<?php echo get_stylesheet_directory_uri()?>/img/afspiller.png" alt="afspiller" id="spiller" class="">
+</div>

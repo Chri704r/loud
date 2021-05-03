@@ -32,11 +32,11 @@
 
             h1 {
                 color: #e4254a;
-                margin-top: 30px;
+                margin-top: 15px;
             }
 
             h2 {
-                margin-top: 40px;
+                margin-top: 25px;
                 font-size: 1.8em;
                 line-height: 0.1em;
                 margin-bottom: 25px;
@@ -58,15 +58,10 @@
                 padding-right: 10px;
             }
 
-            .alle {
-                width: 100%;
-                background-color: #b2b2b2;
-            }
-
             .alle_podcasts {
                 display: grid;
-                grid-template-columns: repeat(6, 1fr);
-                grid-gap: 15px;
+                grid-template-columns: repeat(8, 1fr);
+                grid-gap: 10px;
             }
 
             .alle_podcasts:before {
@@ -84,7 +79,7 @@
                 font-size: 1.5em;
                 border-radius: 20px;
                 cursor: pointer;
-                grid-column: 6/7;
+                grid-column: 8/9;
                 grid-row: 2/3;
             }
 
@@ -145,25 +140,31 @@
                     padding-top: 37%;
                     font-size: 30px !important;
                 }
+                .alle_podcasts {
+                    grid-gap: 8px;
+                }
             }
 
             @media only screen and (max-width: 700px) {
                 .alle_podcasts {
-                    display: flex;
-                    flex-direction: row;
+                    display: grid;
+                    grid-template-columns: repeat(16, 1fr);
                     overflow-x: scroll;
+                    grid-gap: 7px;
                 }
                 .alle_knap {
                     display: flex;
-                    font-size: 3em;
+                    font-size: 2em;
                     padding-top: 20%;
                     line-height: initial;
-                    padding-left: 120px;
-                    padding-right: 120px;
-                    ali
+                    padding-left: 50px;
+                    padding-right: 50px;
+                    grid-column: 16/17;
+                    grid-row: 1/2;
                 }
                 .billede {
-                    width: 70%;
+                    width: 150px;
+                    max-width: none;
                 }
                 .kategori {
                     display: grid;
@@ -208,7 +209,7 @@
             let categories;
             let categories2;
 
-            const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?per_page=11";
+            const dbUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/podcast?per_page=15";
             const catUrl = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/categories?parent=22";
             const catUrl2 = "http://piilmanndesigns.dk/kea/09_cms/loud/wp-json/wp/v2/categories?parent=23";
 
