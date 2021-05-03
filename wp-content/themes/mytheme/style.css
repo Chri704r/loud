@@ -11,52 +11,72 @@ Description: LOUD
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-	background-color: white;
+    background-color: white;
 }
 
 h1 {
-	font-size: 3rem;
-	color: #E4254A;
-	font-family: 'Lato', sans-serif;
-	margin-top: 30px;
+    font-size: 3rem;
+    color: #E4254A;
+    font-family: 'Lato', sans-serif;
+    margin-top: 30px;
 }
 
 p {
-	font-family: 'roboto', sans-serif;
+    font-family: 'roboto', sans-serif;
 }
 
 .mere_button button {
-	border: none;
-	box-shadow: none;
-	text-transform: uppercase;
-	color: #6f6f6f;
+    border: none;
+    box-shadow: none;
+    text-transform: uppercase;
+    color: #6f6f6f;
 }
 
 .mere_button button:hover {
-	color: #e4254a;
-	cursor: pointer;
+    color: #e4254a;
+    cursor: pointer;
 }
 
 .header-homepage .header-description-row {
-	padding: 0 !important;
+    padding: 0 !important;
 }
 
 .header-description {
-	padding: 0 !important;
+    padding: 0 !important;
 }
 
 video {
-	height: 80vh !important;
+    height: 80vh !important;
 }
 
 .header-full-height {
-	min-height: 80vh !important;
+    min-height: 80vh !important;
 }
 
+
+
 .navigation-bar {
-	background-color: #1F2338;
+    background-color: #1F2338;
 }
 
 #forsideh1 {
     display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+    div#wp-custom-header.cp-video-bg {
+        background-image: url(img/mobil_splash.png) !important;
+         background-size: cover !important;
+        background-color: #000000;
+        background-position: center top;
+        background-size: cover;
+        position: absolute;
+        z-index: -3;
+        height: 100%;
+        width: 100%;
+        margin-top: 0;
+        top: 0px;
+        -webkit-transform: translate3d(0, 0, -2px);
+    }
 }
