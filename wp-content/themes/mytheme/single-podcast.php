@@ -163,7 +163,7 @@
         width: 100%;
         height: 4vw;
         border-color: black;
-        border-style: solid;
+        border-top-style: solid;
         position: fixed;
         bottom: 0;
         display: grid;
@@ -171,8 +171,7 @@
     }
 
     #afspiller img {
-        width: 14vw;
-        height: 4vw;
+        width: 100%;
     }
 
     @media only screen and (max-width: 700px) {
@@ -182,7 +181,7 @@
             width: 100%;
             height: 20vw;
             border-color: black;
-            border-style: solid;
+            border-top-style: solid;
             position: fixed;
             bottom: 0;
             display: grid;
@@ -190,10 +189,17 @@
         }
 
         #afspiller img {
-            width: 68vw;
-            height: 20vw;
+            margin-top: -5px;
         }
+
+        #afspiller #spiller_stor {
+            display: none;
+        }
+
+
+
     }
+
 
     /*Desktop*/
 
@@ -408,5 +414,6 @@
 </script>
 <?php get_footer(); ?>
 <div id="afspiller" class="hidden">
+    <img src="<?php echo get_stylesheet_directory_uri()?>/img/afspiller_stor.png" alt="afspiller" id="spiller_stor" class="stor">
     <img src="<?php echo get_stylesheet_directory_uri()?>/img/afspiller.png" alt="afspiller" id="spiller" class="">
 </div>
