@@ -149,6 +149,10 @@
 	}
 
 	#afspiller {
+
+	}
+
+	#afspiller img {
 		position: relative;
 		background-color: #F2F2F2;
 		width: 100%;
@@ -159,11 +163,6 @@
 		bottom: 0;
 		display: grid;
 		justify-content: center;
-	}
-
-	#afspiller img {
-		width: 14vw;
-		height: 4vw;
 	}
 
 
