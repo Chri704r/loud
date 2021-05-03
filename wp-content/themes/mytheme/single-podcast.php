@@ -161,9 +161,9 @@
         position: relative;
         background-color: #F2F2F2;
         width: 100%;
-        height: 60px;
+        height: 4vw;
         border-color: black;
-        border-top-style: solid;
+        border-style: solid;
         position: fixed;
         bottom: 0;
         display: grid;
@@ -173,6 +173,26 @@
     #afspiller img {
         width: 14vw;
         height: 4vw;
+    }
+
+    @media only screen and (max-width: 700px) {
+        #afspiller {
+            position: relative;
+            background-color: #F2F2F2;
+            width: 100%;
+            height: 20vw;
+            border-color: black;
+            border-style: solid;
+            position: fixed;
+            bottom: 0;
+            display: grid;
+            justify-content: center;
+        }
+
+        #afspiller img {
+            width: 68vw;
+            height: 20vw;
+        }
     }
 
     /*Desktop*/
