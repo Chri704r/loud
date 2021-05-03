@@ -72,10 +72,17 @@
         color: white;
     }
 
+    .some {
+        margin-left: -2.5vw;
+
+
+    }
+
     .some img {
 
-        width: 25vw;
-        height: 25.5vw;
+        width: 15vw;
+        height: 15vw;
+        padding: 10px;
     }
 
 
@@ -98,18 +105,18 @@
         }
 
         .some img {
-
-            width: 4.5vw;
-            height: 4vw;
+            margin-top: 20px;
+            width: 2vw;
+            height: 2vw;
 
         }
+
 
         .some {
-            margin-left: -1.2vw;
+            margin-left: -0.5vw;
 
 
         }
-
 
         .kontakt {
 
