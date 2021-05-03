@@ -211,6 +211,33 @@
                 p {
                     text-align: left;
                 }
+                #podcast_wrapper {
+                    overflow: hidden;
+                    width: 95vw;
+                }
+                .podcast_container {
+                    grid-gap: 10px;
+                    margin-left: 0px;
+                }
+                .podcast_container:before {
+                    display: none;
+                }
+                .nyeste {
+                    grid-gap: 10px;
+                }
+                .aktuelt {
+                    grid-gap: 10px;
+                    margin-left: 0px;
+                }
+                .aktuelt:before {
+                    display: none;
+                }
+                .alle_container {
+                    width: 190px;
+                }
+                .episode_container {
+                    width: 190px;
+                }
                 .mere_button {
                     text-align: left;
                 }
