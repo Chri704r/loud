@@ -160,7 +160,6 @@
 
 		.min_active_dag {
 			color: #E4254A;
-
 		}
 
 		.min_active {
