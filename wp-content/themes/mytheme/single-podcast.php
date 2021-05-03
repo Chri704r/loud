@@ -38,8 +38,10 @@
 
         <template>
             <div class="episode_container">
-                <img src="<?php echo get_stylesheet_directory_uri()?>/img/playknap.png" alt="" class="afspil_episode">
-                <img src="" alt="" class="podcast_billede">
+                <div class="billede_wrapper">
+                    <img src="<?php echo get_stylesheet_directory_uri()?>/img/playknap.png" alt="" class="afspil_episode">
+                    <img src="" alt="" class="podcast_billede">
+                </div>
                 <div class="episode_fakta">
                     <h3 class="episode_navn"></h3>
                     <p class="episode_tekst"></p>
@@ -91,6 +93,10 @@
             display: none;
         }
 
+        .billede_wrapper {
+            position: relative;
+        }
+
         .beskrivelse {
             padding: 10px;
             text-align: left;
@@ -116,8 +122,8 @@
 
         .afspil_episode {
             position: absolute;
-            left: 33px;
-            margin-top: 17px;
+            left: 3%;
+            top: 3%;
             cursor: pointer;
         }
 
@@ -167,6 +173,13 @@
         }
         /*Desktop*/
 
+        @media only screen and (min-width: 500px) {
+            .afspil_episode {
+                left: 20%;
+                top: 20%;
+            }
+        }
+
         @media only screen and (min-width: 760px) {
             h1 {
                 margin-top: 5px;
@@ -206,8 +219,8 @@
             }
             .afspil_episode {
                 position: absolute;
-                left: 75px;
-                margin-top: 45px;
+                left: 5%;
+                top: 10%;
             }
             .afspilknap:active {
                 background-color: #bb1636;
