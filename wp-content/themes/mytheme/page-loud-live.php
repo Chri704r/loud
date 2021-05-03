@@ -283,7 +283,7 @@
         }
 
         #afspiller img {
-            margin-top: -5px;
+            margin-top: -9px;
         }
 
         #afspiller #spiller_stor {
