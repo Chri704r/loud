@@ -1,7 +1,7 @@
 <?php mesmerize_get_header(); ?>
 
     <main>
-        <img src="<?php echo get_stylesheet_directory_uri()?>/img/tilbagepil.png" alt="" class="back" width="45 px" height="60 px">
+        <img src="<?php echo get_stylesheet_directory_uri()?>/img/tilbagepil.png" alt="" class="back" width="45 px" height="60px">
         <h1 class="categori"></h1>
 
         <section class="podcast_container">
@@ -29,7 +29,8 @@
         }
 
         h1 {
-            margin-top: 5px;
+            margin-top: 10px;
+            font-size: 2.5rem;
         }
 
         h2 {
@@ -41,10 +42,9 @@
 
         .back {
             display: flex;
-            margin-left: -6rem;
             margin-top: 1rem;
             width: 25px;
-            height: 40px;
+            height: 33px;
             cursor: pointer;
         }
 
@@ -92,7 +92,9 @@
                 text-align: left;
             }
             .back {
-                margin-left: 1rem;
+                position: absolute;
+                top: 120px;
+                left: 15px;
             }
             h2 {
                 text-align: left;
