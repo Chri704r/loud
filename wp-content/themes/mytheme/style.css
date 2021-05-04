@@ -63,11 +63,15 @@ video {
     display: none;
 }
 
+svg {
+    filter: invert(18%) sepia(100%) saturate(6585%) hue-rotate(340deg) brightness(86%) contrast(99%);
+}
+
 @media only screen and (max-width: 600px) {
 
     div#wp-custom-header.cp-video-bg {
         background-image: url(img/mobil_splash.png) !important;
-         background-size: cover !important;
+        background-size: cover !important;
         background-color: #000000;
         background-position: center top;
         background-size: cover;
