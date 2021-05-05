@@ -93,7 +93,7 @@
             }
             .back {
                 position: absolute;
-                top: 120px;
+                top: 80px;
                 left: 15px;
             }
             h2 {
